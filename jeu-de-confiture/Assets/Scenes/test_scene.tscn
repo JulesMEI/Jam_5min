@@ -1,12 +1,18 @@
 [gd_scene format=3 uid="uid://cmf0jq3i4bhxg"]
 
+[ext_resource type="Script" uid="uid://cyh0d64pfygbl" path="res://addons/maaacks_menus_template/base/nodes/utilities/pause_menu_controller.gd" id="1_1trni"]
 [ext_resource type="PackedScene" uid="uid://dqdltsrfeteu7" path="res://Assets/Scenes/player.tscn" id="1_c7w1r"]
 [ext_resource type="Texture2D" uid="uid://dsdq2bvjijsk5" path="res://icon.svg" id="2_gjict"]
+[ext_resource type="PackedScene" uid="uid://cnj25upidksli" path="res://Assets/MenuScenes/scenes/windows/pause_menu.tscn" id="2_hvq5l"]
 [ext_resource type="PackedScene" path="res://timer.tscn" id="3_ecx8b"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gjict"]
 
 [node name="TestScene" type="Node2D" unique_id=1727485768]
+
+[node name="PauseMenu" type="Node" parent="." unique_id=1262041953]
+script = ExtResource("1_1trni")
+pause_menu_packed = ExtResource("2_hvq5l")
 
 [node name="Player" parent="." unique_id=514449182 instance=ExtResource("1_c7w1r")]
 position = Vector2(0, -1)
