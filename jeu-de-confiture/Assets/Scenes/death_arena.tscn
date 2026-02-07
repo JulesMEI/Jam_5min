@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://c4rj8qmxopceq" path="res://Assets/Scripts/death_arena.gd" id="1_6dcyk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2evn1"]
-size = Vector2(1541, 63)
+size = Vector2(870, 63)
 
 [node name="death" type="Area2D" unique_id=154333834]
 script = ExtResource("1_6dcyk")
 
 [node name="deathBox" type="CollisionShape2D" parent="." unique_id=927082608]
-position = Vector2(-2.5, 188.5)
+position = Vector2(333, 188.5)
 shape = SubResource("RectangleShape2D_2evn1")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

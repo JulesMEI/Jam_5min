@@ -498,7 +498,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Run",
-"speed": 12.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -549,3 +549,4 @@ position = Vector2(0, -17)
 shape = SubResource("CapsuleShape2D_ast1v")
 
 [node name="Timer" parent="." unique_id=2022216702 instance=ExtResource("5_23lac")]
+autostart = true

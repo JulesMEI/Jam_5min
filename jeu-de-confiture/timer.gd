@@ -15,3 +15,11 @@ func update_time(cost: float):
 	var total = get_time_left() - cost
 	start(total)
 	update.emit()
+	
+func is_terminated():
+	var total = get_time_left()
+	if total == 0:
+		return true
+	
+func reset():
+	start(300)
