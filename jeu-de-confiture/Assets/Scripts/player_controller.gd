@@ -19,6 +19,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		$"../Timer".update_time(50)
 		velocity.y = jump_vel * jump_mul
 
 	# Get the input direction and handle the movement/deceleration.
