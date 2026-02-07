@@ -30,6 +30,7 @@ func jump():
 		$Timer.update_time(jump_cost)
 		animated_sprite.scale = Vector2(0.6, 1.3)
 		velocity.y = jump_vel * jump_mul
+		$Audio/Jump.play()
 
 #func roll(remaining_time : float = 100.0) -> bool :
 	#if not Input.is_action_pressed("roll"):
@@ -68,6 +69,7 @@ func dash():
 	$Timer.update_time(dash_cost)
 	velocity.x += speed * speed_mul * looking_at 
 	velocity.y = jump_vel * jump_mul / 2
+	$Audio/Dash.play()
 
 # Physics process
 func _physics_process(delta: float) -> void:
