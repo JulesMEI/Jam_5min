@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://tocgkgmji0gw" path="res://Assets/Sprites/Terrain/Terrain.png" id="4_637wq"]
 [ext_resource type="PackedScene" uid="uid://bog5v7lcc0o3c" path="res://Assets/Scenes/win_condition.tscn" id="4_k5bmm"]
 [ext_resource type="PackedScene" uid="uid://bf3e7idq1qf7x" path="res://Assets/Scenes/death_arena.tscn" id="6_nnog6"]
-[ext_resource type="PackedScene" uid="uid://cu51dy8duh3xn" path="res://hud.tscn" id="7_k5bmm"]
+[ext_resource type="PackedScene" uid="uid://cu51dy8duh3xn" path="res://Assets/Scenes/hud.tscn" id="7_k5bmm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q0a32"]
 shader = ExtResource("1_nnog6")

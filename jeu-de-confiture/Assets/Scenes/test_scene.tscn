@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cmf0jq3i4bhxg"]
 
-[ext_resource type="Script" uid="uid://d37572nuh8exa" path="res://Assets/Scripts/level_2.gd" id="1_637wq"]
+[ext_resource type="Script" path="res://Assets/Scripts/level_2.gd" id="1_637wq"]
 [ext_resource type="PackedScene" uid="uid://dqdltsrfeteu7" path="res://Assets/Scenes/player.tscn" id="2_2evn1"]
 [ext_resource type="PackedScene" uid="uid://bog5v7lcc0o3c" path="res://Assets/Scenes/win_condition.tscn" id="4_k5bmm"]
-[ext_resource type="PackedScene" uid="uid://cu51dy8duh3xn" path="res://hud.tscn" id="5_hvq5l"]
+[ext_resource type="PackedScene" uid="uid://cu51dy8duh3xn" path="res://Assets/Scenes/hud.tscn" id="5_hvq5l"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1trni"]
 distance = -4.0
