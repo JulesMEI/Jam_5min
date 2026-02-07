@@ -23,8 +23,10 @@ var looking_at = 1
 # const SPEED = 300.0
 # const JUMP_VELOCITY = -400.0
 
-func jump(remaining_time : float = 100.0):
+func jump():
+	var remaining_time = $Timer.get_time_left()
 	if jump_cost < remaining_time and Input.is_action_just_pressed("jump") and is_on_floor():
+		$Timer.update_time(jump_cost)
 		velocity.y = jump_vel * jump_mul
 #
 #func roll(remaining_time : float = 100.0) -> bool :
@@ -54,10 +56,12 @@ func move():
 		velocity.x = move_toward(velocity.x, 0, speed * speed_mul * slow_mul)
 
 # Makes the player dash and gives him some upward velocity and more angular momentum
-func dash(remaining_time : float = 100.0):
-	if !Input.is_action_just_pressed("dash") or dashed:
+func dash():
+	var remaining_time = $Timer.get_time_left()
+	if !Input.is_action_just_pressed("dash") or dashed or dash_cost > remaining_time:
 		return
 	dashed = true
+	$Timer.update_time(dash_cost)
 	velocity.x += speed * speed_mul * looking_at 
 	velocity.y = jump_vel * jump_mul / 2
 

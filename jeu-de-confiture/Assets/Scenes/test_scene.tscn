@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dqdltsrfeteu7" path="res://Assets/Scenes/player.tscn" id="1_c7w1r"]
 [ext_resource type="Texture2D" uid="uid://dsdq2bvjijsk5" path="res://icon.svg" id="2_gjict"]
 [ext_resource type="PackedScene" uid="uid://bqcrayrdeopuv" path="res://timer.tscn" id="3_ecx8b"]
+[ext_resource type="PackedScene" uid="uid://cu51dy8duh3xn" path="res://hud.tscn" id="4_1trni"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gjict"]
 
@@ -10,6 +11,8 @@
 
 [node name="Player" parent="." unique_id=514449182 instance=ExtResource("1_c7w1r")]
 position = Vector2(0, -1)
+
+[node name="Timer" parent="Player" unique_id=2022216702 instance=ExtResource("3_ecx8b")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=373678920]
 
@@ -21,4 +24,6 @@ texture = ExtResource("2_gjict")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1127005107]
 shape = SubResource("WorldBoundaryShape2D_gjict")
 
-[node name="Timer" parent="." unique_id=2022216702 instance=ExtResource("3_ecx8b")]
+[node name="HUD" parent="." unique_id=195147303 instance=ExtResource("4_1trni")]
+
+[connection signal="update" from="Player/Timer" to="HUD" method="_on_update_label_timeout"]

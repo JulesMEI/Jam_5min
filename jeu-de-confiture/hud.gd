@@ -1,9 +1,8 @@
-extends Timer
-signal update
+extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	start()
+	$UpdateLabel.start()
 	pass # Replace with function body.
 
 
@@ -11,7 +10,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func update_time(cost: float):
-	var total = get_time_left() - cost
-	start(total)
-	update.emit()
+
+func _on_update_label_timeout() -> void:
+	$TimerLabel.text = str(int($"../Player/Timer".get_time_left()))

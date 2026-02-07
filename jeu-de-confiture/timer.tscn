@@ -1,30 +1,9 @@
 [gd_scene format=3 uid="uid://bqcrayrdeopuv"]
 
 [ext_resource type="Script" uid="uid://dy8xq1m2xv6b8" path="res://timer.gd" id="1_qdhxh"]
-[ext_resource type="FontFile" uid="uid://gsbg0718grhb" path="res://Fonts/ImaginaryImages-O7VP.ttf" id="2_ye2uk"]
 
 [node name="Timer" type="Timer" unique_id=2022216702]
 wait_time = 300.0
 one_shot = true
 ignore_time_scale = true
 script = ExtResource("1_qdhxh")
-
-[node name="TimerLabel" type="Label" parent="." unique_id=187675094]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -173.0
-offset_right = -53.0
-offset_bottom = 70.0
-grow_horizontal = 2
-scale = Vector2(3, 3)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 20
-theme_override_constants/shadow_outline_size = 1
-theme_override_fonts/font = ExtResource("2_ye2uk")
-theme_override_font_sizes/font_size = 64
-text = "300"
-
-[node name="ChangeLabel" type="Timer" parent="." unique_id=1768873242]
-
-[connection signal="timeout" from="ChangeLabel" to="." method="_on_change_label_timeout"]
