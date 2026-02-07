@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dsdq2bvjijsk5" path="res://icon.svg" id="2_gjict"]
 [ext_resource type="PackedScene" uid="uid://bqcrayrdeopuv" path="res://timer.tscn" id="3_ecx8b"]
 [ext_resource type="PackedScene" uid="uid://cu51dy8duh3xn" path="res://hud.tscn" id="4_1trni"]
+[ext_resource type="PackedScene" path="res://timer.tscn" id="3_ecx8b"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gjict"]
 
