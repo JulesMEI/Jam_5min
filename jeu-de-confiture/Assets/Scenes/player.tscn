@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dlux1uq474ry4" path="res://Assets/Sprites/Player/JumpPack_CharacterSpriteSheet.png" id="2_7dd06"]
 [ext_resource type="Script" uid="uid://bicq8a0bgaust" path="res://Assets/Scripts/player_animator.gd" id="2_38rej"]
 [ext_resource type="Script" uid="uid://b6tlsl4bbvlsi" path="res://Assets/Scripts/camera_player.gd" id="2_t1xgp"]
+[ext_resource type="PackedScene" uid="uid://bqcrayrdeopuv" path="res://timer.tscn" id="5_23lac"]
 
 [sub_resource type="Animation" id="Animation_7dd06"]
 resource_name = "Dead"
@@ -480,7 +481,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Roll",
-"speed": 12.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -531,7 +532,7 @@ script = ExtResource("2_t1xgp")
 script = ExtResource("2_38rej")
 controller = NodePath("..")
 animated_sprite = NodePath("AnimatedSprite2D")
-timer = NodePath("Timer")
+timer = NodePath("")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Graphical" unique_id=542683099]
 libraries/ = SubResource("AnimationLibrary_c3tg1")
@@ -541,10 +542,10 @@ position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_7578i")
 animation = &"Idle"
 autoplay = "Idle"
-
-[node name="Timer" type="Timer" parent="Graphical" unique_id=1619911853]
-wait_time = 2.0
+speed_scale = 0.575
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=560764622]
 position = Vector2(0, -17)
 shape = SubResource("CapsuleShape2D_ast1v")
+
+[node name="Timer" parent="." unique_id=2022216702 instance=ExtResource("5_23lac")]

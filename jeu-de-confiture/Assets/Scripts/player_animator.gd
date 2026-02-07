@@ -14,11 +14,19 @@ func _process(_delta):
 		animated_sprite.play("Dead")
 		return
 	if !controller.is_on_floor() :
+		if controller.dashed:
+			animated_sprite.play("Roll")
+			return
+
 		if controller.velocity.y < 0 :
 			animated_sprite.play("Jump")
 		else :
 			animated_sprite.play("Fall")
+
 	else :
+		#if controller.rolling and not controller.direction:
+			#animated_sprite.play("Roll")
+			#return
 		if abs(controller.velocity.x) > 0 :
 			animated_sprite.play("Run")
 		else :
