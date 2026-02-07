@@ -14,8 +14,9 @@ script = ExtResource("1_637wq")
 [node name="Player" parent="." unique_id=514449182 instance=ExtResource("2_2evn1")]
 position = Vector2(0, -1)
 
-[node name="Area2D" parent="." unique_id=1751167132 instance=ExtResource("4_k5bmm")]
+[node name="Area2D" parent="." unique_id=1751167132 node_paths=PackedStringArray("controller") instance=ExtResource("4_k5bmm")]
 position = Vector2(758, -73)
+controller = NodePath("../Player")
 
 [node name="HUD" parent="." unique_id=195147303 instance=ExtResource("5_hvq5l")]
 
