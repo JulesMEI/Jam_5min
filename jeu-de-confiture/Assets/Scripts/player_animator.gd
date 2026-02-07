@@ -10,6 +10,9 @@ func _process(_delta):
 	elif controller.direction == -1 :
 		animated_sprite.flip_h = true
 
+	if controller.death:
+		animated_sprite.play("Dead")
+		return
 	if !controller.is_on_floor() :
 		if controller.velocity.y < 0 :
 			animated_sprite.play("Jump")
