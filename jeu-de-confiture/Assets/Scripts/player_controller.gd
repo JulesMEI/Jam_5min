@@ -3,19 +3,22 @@ extends CharacterBody2D
 class_name PlayerController
 
 @export var animated_sprite : AnimatedSprite2D
+@export var splash_dust : Dust
 
 @export var speed = 10.0
-@export var jump_vel = 10.0
+@export var jump_vel = 15.0
 
 var speed_mul = 30.0
-var slow_mul = 0.05
+var slow_mul = 0.1
 var jump_mul = -30.0
 
 var dashed = false
+var double_jumped = false
 var was_airborne = false
 #var rolling = 0
 
 @export var jump_cost = 50
+@export var double_jump_cost = 50
 @export var dash_cost = 50
 
 var direction = 0
@@ -28,6 +31,7 @@ func jump(remaining_time : float = 100.0):
 	if jump_cost < remaining_time and Input.is_action_just_pressed("jump") and is_on_floor():
 		animated_sprite.scale = Vector2(0.6, 1.3)
 		velocity.y = jump_vel * jump_mul
+		splash_dust.play()
 
 #func roll(remaining_time : float = 100.0) -> bool :
 	#if not Input.is_action_pressed("roll"):
@@ -35,7 +39,7 @@ func jump(remaining_time : float = 100.0):
 	#rolling = true
 	#return true
 
-# Makes the player move and allows him to roll to 
+# Makes the player move and allows him to roll to
 func move():
 	if direction:
 		# quicker movement on the ground
@@ -57,13 +61,19 @@ func move():
 		velocity.x = move_toward(velocity.x, 0, speed * speed_mul * slow_mul)
 
 # Makes the player dash and gives him some upward velocity and more angular momentum
-func dash(remaining_time : float = 100.0):
+func dash(_remaining_time : float = 100.0):
 	if !Input.is_action_just_pressed("dash") or dashed:
 		return
-	animated_sprite.scale = Vector2(1.5, 0.7)
 	dashed = true
-	velocity.x += speed * speed_mul * looking_at 
+	splash_dust.play()
+	animated_sprite.scale = Vector2(1.5, 0.7)
+	velocity.x += speed * speed_mul * looking_at
 	velocity.y = jump_vel * jump_mul / 2
+
+
+func landing():
+	animated_sprite.scale = Vector2(1.5, 0.7)
+	splash_dust.play()
 
 # Physics process
 func _physics_process(delta: float) -> void:
@@ -74,7 +84,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		if was_airborne:
 			was_airborne = false
-			animated_sprite.scale = Vector2(1.5, 0.7)
+			landing()
 
 		# rolling = false
 		dashed = 0
