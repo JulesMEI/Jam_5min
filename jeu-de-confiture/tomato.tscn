@@ -1,24 +1,88 @@
 [gd_scene format=3 uid="uid://6cykofm1fm6i"]
 
 [ext_resource type="Texture2D" uid="uid://ctum0m3lap0gt" path="res://Assets/Sprites/tomato.png" id="1_ajaoc"]
-[ext_resource type="Script" path="res://tomato.gd" id="1_bka0x"]
+[ext_resource type="Script" uid="uid://84e524kvhuwp" path="res://tomato.gd" id="1_bka0x"]
 [ext_resource type="Texture2D" uid="uid://5g7efosbv25c" path="res://Assets/Sprites/hand.png" id="2_joa5w"]
+[ext_resource type="AudioStream" uid="uid://dqbjc6t1tc51t" path="res://Sound/Effects/tomato-splat.mp3" id="4_kg4fp"]
+
+[sub_resource type="Animation" id="Animation_ijibd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.34906584]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.26694924, 0.2739742)]
+}
+
+[sub_resource type="Animation" id="Animation_4prdx"]
+resource_name = "ZiakAnimation"
+length = 2.0
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.2833333, 1.5333333, 1.7833333, 2),
+"transitions": PackedFloat32Array(2, 0.5, 2, 0.5, 2, 0.5, 2, 0.5, 2),
+"update": 0,
+"values": [-0.17453292519943295, 0.0, 0.17453292519943295, 0.0, -0.17453292519943295, 0.0, 0.17453292519943295, 0.0, -0.17453292519943295]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(2, 1, 0.5, 1, 0.5),
+"update": 0,
+"values": [Vector2(0.25, 0.25), Vector2(0.3, 0.3), Vector2(0.4, 0.4), Vector2(0.3, 0.3), Vector2(0.25, 0.25)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bka0x"]
+_data = {
+&"RESET": SubResource("Animation_ijibd"),
+&"ZiakAnimation": SubResource("Animation_4prdx")
+}
 
 [sub_resource type="Curve2D" id="Curve2D_7hefh"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 729, 211, 0, 0, 0, 0, 209, 222)
+"points": PackedVector2Array(0, 0, 0, 0, 729, 214, 0, 0, 0, 0, 268, 215)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_bka0x"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 203, 219, 0, 0, 0, 0, 196, -170)
+"points": PackedVector2Array(0, 0, 0, 0, 203, 219, 0, 0, 0, 0, 202, -202)
 }
 point_count = 2
 
 [node name="Tomato" type="Node2D" unique_id=817676527]
 script = ExtResource("1_bka0x")
-move_speed = 0.1
+move_speed = 0.3
 
 [node name="HandSprite" type="Sprite2D" parent="." unique_id=1138412061]
 position = Vector2(838, 194)
@@ -27,18 +91,24 @@ region_enabled = true
 region_rect = Rect2(50, 220, 450, 220)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="HandSprite" unique_id=42238576]
+position = Vector2(-33, 23)
 remote_path = NodePath("..")
 
 [node name="TomatoSprite" type="Sprite2D" parent="." unique_id=1230750444]
 position = Vector2(202, 219)
-scale = Vector2(0.35632184, 0.37795275)
+rotation = -0.34906584
+scale = Vector2(0.26694924, 0.2739742)
 texture = ExtResource("1_ajaoc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TomatoSprite" unique_id=157664398]
+libraries/ = SubResource("AnimationLibrary_bka0x")
+autoplay = &"ZiakAnimation"
 
 [node name="HandPath" type="Path2D" parent="." unique_id=586479908]
 curve = SubResource("Curve2D_7hefh")
 
 [node name="HandPathFollow" type="PathFollow2D" parent="HandPath" unique_id=1347776675]
-position = Vector2(729, 211)
+position = Vector2(729, 214)
 rotation = 3.1165497
 rotates = false
 loop = false
@@ -48,4 +118,10 @@ curve = SubResource("Curve2D_bka0x")
 
 [node name="TomatoPathFollow" type="PathFollow2D" parent="TomatoPath" unique_id=809773039]
 position = Vector2(203, 219)
-rotation = -1.5887892
+rotation = -1.5731716
+loop = false
+
+[node name="TomatoSplat" type="AudioStreamPlayer2D" parent="." unique_id=1287033755]
+position = Vector2(0, -3.0517578e-05)
+scale = Vector2(1.0000001, 1)
+stream = ExtResource("4_kg4fp")

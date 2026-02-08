@@ -1,6 +1,6 @@
 extends Node2D
-
 @export var move_speed: float
+var playing_splat = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -8,7 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if (move_hand(delta) == true):
+	if (move_hand(delta)):
 		move_tomato(delta)
 	
 func move_tomato(delta: float) -> bool:
@@ -26,7 +26,10 @@ func move_hand(delta: float) -> bool:
 
 func close_hand() -> bool:
 	if ($HandPath/HandPathFollow.progress_ratio == 1.0):
-		$HandSprite.region_rect = Rect2(50.0, 40.0, 450.0, 180.0)
+		if (playing_splat == false):
+			playing_splat = true
+			$TomatoSplat.play()
+		$HandSprite.region_rect = Rect2(20.0, 40.0, 450.0, 180.0)
 		$TomatoSprite.hide()
 		return true
 	return false
