@@ -34,19 +34,20 @@ var last_time_decrement = 0
 # const JUMP_VELOCITY = -400.0
 
 func _ready():
-	MusicPlayer._play_music()
 	positionStart = global_position
 	jump_vel = 10.0
 	speed = 10.0
 
 func jump():
 	var remaining_time = timer.get_time_left()
+
 	if jump_cost < remaining_time and Input.is_action_just_pressed("jump") and is_on_floor():
 		last_time_decrement = jump_cost
 		timer.update_time(jump_cost)
 		animated_sprite.scale = Vector2(0.6, 1.3)
 		splash_dust.play()
 		velocity.y = jump_vel * jump_mul
+		$Audio/Jump.pitch_scale = 1.0
 		$Audio/Jump.play()
 		nbr_jump -= 1
 
@@ -55,6 +56,8 @@ func jump():
 		timer.update_time(db_jump_cost)
 		animated_sprite.scale = Vector2(0.6, 1.3)
 		splash_dust.play()
+		$Audio/Jump.pitch_scale = 1.3
+		$Audio/Jump.play()
 		velocity.y = jump_vel * jump_mul
 		nbr_jump -= 1
 

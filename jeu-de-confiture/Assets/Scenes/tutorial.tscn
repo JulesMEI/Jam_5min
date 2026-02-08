@@ -1,6 +1,6 @@
-[gd_scene format=4 uid="uid://dfm2ywma4bdqu"]
+[gd_scene format=4 uid="uid://ddo8r1a8i386j"]
 
-[ext_resource type="Script" uid="uid://d37572nuh8exa" path="res://Assets/Scripts/level_2.gd" id="1_wywo6"]
+[ext_resource type="Script" path="res://Assets/Scripts/level_2.gd" id="1_wywo6"]
 [ext_resource type="PackedScene" uid="uid://dqdltsrfeteu7" path="res://Assets/Scenes/player.tscn" id="2_dlbb6"]
 [ext_resource type="PackedScene" uid="uid://bog5v7lcc0o3c" path="res://Assets/Scenes/win_condition.tscn" id="3_237av"]
 [ext_resource type="PackedScene" uid="uid://cu51dy8duh3xn" path="res://Assets/Scenes/hud.tscn" id="4_rur2o"]
@@ -273,10 +273,10 @@ sources/0 = SubResource("TileSetAtlasSource_nnog6")
 script = ExtResource("1_wywo6")
 
 [node name="Area2D" parent="." unique_id=1751167132 instance=ExtResource("3_237av")]
-position = Vector2(2364, -72)
+position = Vector2(2364, -128)
 
 [node name="Portal" parent="." unique_id=612292203 node_paths=PackedStringArray("controller") instance=ExtResource("3_237av")]
-position = Vector2(5540, -32)
+position = Vector2(3874, -32)
 controller = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=514449182 instance=ExtResource("2_dlbb6")]
@@ -327,13 +327,24 @@ You can dash with both of the shift keys"
 label_settings = SubResource("LabelSettings_41tge")
 horizontal_alignment = 1
 
+[node name="GLHF" type="Label" parent="Explication" unique_id=1371483455]
+offset_left = 3829.0
+offset_top = -110.0
+offset_right = 3920.0
+offset_bottom = -71.0
+text = "Good luck !
+,':)"
+label_settings = SubResource("LabelSettings_0dgvr")
+horizontal_alignment = 1
+
 [node name="TryItYourself" type="Label" parent="Explication" unique_id=1723781820]
 offset_left = 1982.0
-offset_top = -204.0
+offset_top = -231.0
 offset_right = 2687.0
-offset_bottom = -155.0
-text = "Now time (time) for you to go along the journey
-Oh wait you dont have enought time to jump maybe continue along you may be surprise"
+offset_bottom = -171.0
+text = "Now time (time) for you to go along the journey !
+Oh wait you dont have enough time to jump ?
+That's unfortunate, if only there was another exit..."
 label_settings = SubResource("LabelSettings_0dgvr")
 horizontal_alignment = 1
 
@@ -351,7 +362,7 @@ offset_top = 13.9999695
 offset_right = -526.0
 offset_bottom = 36.99997
 rotation = -0.87266463
-text = "GO BACK TO THE TUTO"
+text = "GO BACK TO THE TUTORIAL"
 label_settings = SubResource("LabelSettings_237av")
 
 [node name="pannard" type="AnimatedSprite2D" parent="." unique_id=512762467]
