@@ -3,10 +3,71 @@
 [ext_resource type="FontFile" uid="uid://gsbg0718grhb" path="res://Fonts/ImaginaryImages-O7VP.ttf" id="1_37p78"]
 [ext_resource type="Script" uid="uid://bqni6oklr2vjd" path="res://Assets/Scripts/hud.gd" id="1_64ctp"]
 
+[sub_resource type="Animation" id="Animation_th0pt"]
+resource_name = "MinusFade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TimerMinus:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.4, 0.40612623),
+"update": 0,
+"values": [Vector2(734, 2), Vector2(734, 117)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TimerMinus:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.9477342, 0.23188767, 0.24717599, 1), Color(0.9490196, 0.23137255, 0.24705882, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xs5ck"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TimerMinus:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(734, 117)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TimerMinus:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.9490196, 0.23137255, 0.24705882, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x7y1r"]
+_data = {
+&"MinusFade": SubResource("Animation_th0pt"),
+&"RESET": SubResource("Animation_xs5ck")
+}
+
 [node name="HUD" type="CanvasLayer" unique_id=195147303]
 script = ExtResource("1_64ctp")
 
-[node name="TimerLabel" type="Label" parent="." unique_id=1803161318]
+[node name="TimerLabel" type="Label" parent="." unique_id=759724171]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -21,6 +82,29 @@ theme_override_constants/shadow_outline_size = 3
 theme_override_fonts/font = ExtResource("1_37p78")
 theme_override_font_sizes/font_size = 32
 text = "300"
+
+[node name="TimerMinus" type="Label" parent="." unique_id=1803161318]
+modulate = Color(0.9490196, 0.23137255, 0.24705882, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 158.0
+offset_top = 117.0
+offset_right = 216.0
+offset_bottom = 151.00003
+grow_horizontal = 2
+scale = Vector2(3, 3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("1_37p78")
+theme_override_font_sizes/font_size = 32
+text = "-50"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TimerMinus" unique_id=373380965]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_x7y1r")
+autoplay = &"RESET"
 
 [node name="UpdateLabel" type="Timer" parent="." unique_id=1096618300]
 wait_time = 0.1

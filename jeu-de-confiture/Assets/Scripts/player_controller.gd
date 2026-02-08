@@ -19,7 +19,7 @@ var was_airborne = false
 #var rolling = 0
 
 @export var jump_cost = 50
-@export var db_jump_cost = 50
+@export var db_jump_cost = 25
 @export var dash_cost = 50
 
 var direction = 0
@@ -28,6 +28,8 @@ var positionStart
 var death : bool = false
 var looking_at = 1
 var nbr_jump = 2
+
+var last_time_decrement = 0
 
 # const SPEED = 300.0
 # const JUMP_VELOCITY = -400.0
@@ -40,6 +42,7 @@ func _ready():
 func jump():
 	var remaining_time = timer.get_time_left()
 	if jump_cost < remaining_time and Input.is_action_just_pressed("jump") and is_on_floor():
+		last_time_decrement = jump_cost
 		timer.update_time(jump_cost)
 		animated_sprite.scale = Vector2(0.6, 1.3)
 		splash_dust.play()
@@ -47,6 +50,7 @@ func jump():
 		nbr_jump -= 1
 
 	if db_jump_cost < remaining_time and Input.is_action_just_pressed("jump") and not is_on_floor() and nbr_jump > 0:
+		last_time_decrement = db_jump_cost
 		timer.update_time(db_jump_cost)
 		animated_sprite.scale = Vector2(0.6, 1.3)
 		splash_dust.play()
@@ -89,6 +93,7 @@ func dash():
 	animated_sprite.scale = Vector2(1.5, 0.7)
 	dashed = true
 	splash_dust.play()
+	last_time_decrement = dash_cost
 	$Timer.update_time(dash_cost)
 	velocity.x += speed * speed_mul * looking_at
 	velocity.y = jump_vel * jump_mul / 2
