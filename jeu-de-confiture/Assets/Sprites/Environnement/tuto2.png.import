@@ -2,16 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tocgkgmji0gw"
-path="res://.godot/imported/SimpleTiles_allColors.png-1d5821c8c3fa614f4830b00efcfa30d8.ctex"
-metadata={
-"vram_texture": false
-}
+uid="uid://b7pt7407n26p0"
+valid=false
 
 [deps]
 
-source_file="res://Assets/Sprites/Terrain/SimpleTiles_allColors.png"
-dest_files=["res://.godot/imported/SimpleTiles_allColors.png-1d5821c8c3fa614f4830b00efcfa30d8.ctex"]
+source_file="res://Assets/Sprites/Environnement/tuto2.png"
 
 [params]
 
