@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://cu51dy8duh3xn"]
+[gd_scene format=3 uid="uid://dlwgpjatfohlk"]
 
 [ext_resource type="FontFile" uid="uid://gsbg0718grhb" path="res://Fonts/ImaginaryImages-O7VP.ttf" id="1_37p78"]
-[ext_resource type="Script" path="res://Assets/Scripts/hud.gd" id="1_64ctp"]
+[ext_resource type="Script" path="res://hud.gd" id="1_64ctp"]
 
 [node name="HUD" type="CanvasLayer" unique_id=195147303]
 script = ExtResource("1_64ctp")
@@ -23,6 +23,5 @@ theme_override_font_sizes/font_size = 32
 text = "300"
 
 [node name="UpdateLabel" type="Timer" parent="." unique_id=1096618300]
-wait_time = 0.1
 
 [connection signal="timeout" from="UpdateLabel" to="." method="_on_update_label_timeout"]

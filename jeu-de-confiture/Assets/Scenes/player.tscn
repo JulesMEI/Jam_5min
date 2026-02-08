@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://6oeheoki5ol8" path="res://Assets/Scripts/player_controller.gd" id="1_6cd4h"]
 [ext_resource type="Texture2D" uid="uid://dlux1uq474ry4" path="res://Assets/Sprites/Player/JumpPack_CharacterSpriteSheet.png" id="2_7dd06"]
 [ext_resource type="Script" uid="uid://bicq8a0bgaust" path="res://Assets/Scripts/player_animator.gd" id="2_38rej"]
-[ext_resource type="Script" path="res://Assets/Scripts/camera_player.gd" id="2_t1xgp"]
-[ext_resource type="PackedScene" uid="uid://bqcrayrdeopuv" path="res://Assets/Scenes/timer.tscn" id="3_c3tg1"]
+[ext_resource type="Script" uid="uid://b6tlsl4bbvlsi" path="res://Assets/Scripts/camera_player.gd" id="2_t1xgp"]
 [ext_resource type="Texture2D" uid="uid://bswj0ph40voej" path="res://Assets/Sprites/Player/Dust.png" id="4_t1xgp"]
 [ext_resource type="Script" path="res://Assets/Scripts/dust_particles.gd" id="5_23lac"]
 [ext_resource type="AudioStream" uid="uid://b8vqid66ed6sa" path="res://Sound/Effects/Jump.wav" id="8_jp3cw"]
 [ext_resource type="AudioStream" uid="uid://be2rpd05ftfh0" path="res://Sound/Effects/Dash.wav" id="9_ecf78"]
+[ext_resource type="PackedScene" uid="uid://bqcrayrdeopuv" path="res://Assets/Scenes/timer.tscn" id="7_c3tg1"]
 
 [sub_resource type="Animation" id="Animation_7dd06"]
 resource_name = "Dead"
@@ -567,8 +567,6 @@ splash_dust = NodePath("Graphical/LandingDust")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1090173009]
 script = ExtResource("2_t1xgp")
 
-[node name="Timer" parent="." unique_id=2022216702 instance=ExtResource("3_c3tg1")]
-
 [node name="Graphical" type="Node2D" parent="." unique_id=759932560 node_paths=PackedStringArray("controller", "animated_sprite", "landing_dust", "skid_dust")]
 script = ExtResource("2_38rej")
 controller = NodePath("..")
@@ -631,3 +629,4 @@ volume_db = -20.0
 [node name="Dash" type="AudioStreamPlayer2D" parent="Audio" unique_id=513038752]
 stream = ExtResource("9_ecf78")
 volume_db = -20.0
+[node name="Timer" parent="." unique_id=2022216702 instance=ExtResource("7_c3tg1")]

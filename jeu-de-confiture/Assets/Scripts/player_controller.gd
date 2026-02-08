@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 class_name PlayerController
-
 @export var timer: Timer
 @export var animated_sprite : AnimatedSprite2D
 @export var splash_dust : Dust
@@ -19,7 +18,7 @@ var was_airborne = false
 #var rolling = 0
 
 @export var jump_cost = 50
-@export var db_jump_cost = 50
+@export var db_jump_cost = 35
 @export var dash_cost = 50
 
 var direction = 0
