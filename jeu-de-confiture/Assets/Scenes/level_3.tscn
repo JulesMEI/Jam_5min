@@ -497,11 +497,7 @@ tile_set = SubResource("TileSet_f7ha1")
 [node name="Player" parent="." unique_id=514449182 instance=ExtResource("4_fqbdl")]
 position = Vector2(121, 92)
 
-[node name="Portal" parent="." unique_id=1751167132 node_paths=PackedStringArray("controller") instance=ExtResource("5_ri548")]
-position = Vector2(-1, -321)
-controller = NodePath("../Player")
-
-[node name="Portal2" parent="." unique_id=911533726 node_paths=PackedStringArray("controller") instance=ExtResource("5_ri548")]
+[node name="Portal" parent="." unique_id=911533726 node_paths=PackedStringArray("controller") instance=ExtResource("5_ri548")]
 position = Vector2(-1419, 1371)
 controller = NodePath("../Player")
 

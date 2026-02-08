@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cg50eilm1h18c" path="res://Assets/Sprites/Environnement/Portal.png" id="1_57wu4"]
 [ext_resource type="Script" uid="uid://qtcn2darepqy" path="res://Assets/Scripts/win_condition.gd" id="1_r7tky"]
-[ext_resource type="Script" uid="uid://0jsuuw8wb0fj" path="res://Assets/Scripts/win_portal.gd" id="3_hbh6v"]
+[ext_resource type="Script" path="res://Assets/Scripts/win_portal.gd" id="3_hbh6v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r7tky"]
 radius = 22.0
@@ -304,6 +304,7 @@ animations = [{
 
 [node name="Portal" type="Area2D" unique_id=1751167132]
 script = ExtResource("1_r7tky")
+metadata/SceneToLoad = ""
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2120727567]
 shape = SubResource("CircleShape2D_r7tky")

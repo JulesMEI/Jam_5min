@@ -556,7 +556,6 @@ scale_curve = SubResource("CurveTexture_23lac")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ast1v"]
 radius = 11.0
-height = 34.0
 
 [node name="Player" type="CharacterBody2D" unique_id=514449182 node_paths=PackedStringArray("timer", "animated_sprite", "splash_dust")]
 script = ExtResource("1_6cd4h")
@@ -565,6 +564,8 @@ animated_sprite = NodePath("Graphical/AnimatedSprite2D")
 splash_dust = NodePath("Graphical/LandingDust")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1090173009]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 script = ExtResource("2_t1xgp")
 
 [node name="Graphical" type="Node2D" parent="." unique_id=759932560 node_paths=PackedStringArray("controller", "animated_sprite", "landing_dust", "skid_dust")]
@@ -617,7 +618,7 @@ wait_time = 0.05
 one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=560764622]
-position = Vector2(0, -17)
+position = Vector2(0, -14)
 shape = SubResource("CapsuleShape2D_ast1v")
 
 [node name="Audio" type="Node2D" parent="." unique_id=2064320120]

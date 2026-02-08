@@ -15,6 +15,11 @@ func _process(_delta):
 	if controller.death:
 		animated_sprite.play("Dead")
 		return
+
+	if not controller.can_control:
+		animated_sprite.play("Roll")
+		return
+
 	if !controller.is_on_floor() :
 		if controller.dashed:
 			animated_sprite.play("Roll")
