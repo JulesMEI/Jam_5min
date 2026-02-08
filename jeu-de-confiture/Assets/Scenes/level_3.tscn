@@ -512,9 +512,9 @@ tile_set = SubResource("TileSet_7373x")
 [node name="HUD" parent="." unique_id=195147303 instance=ExtResource("7_sogm7")]
 
 [node name="death" parent="." unique_id=154333834 instance=ExtResource("6_yw51p")]
-position = Vector2(925.9999, 1740)
+position = Vector2(767, 1753)
 scale = Vector2(3.935, 3.935)
 
 [node name="death2" parent="." unique_id=1266960684 instance=ExtResource("6_yw51p")]
-position = Vector2(-2619, 1776.9999)
+position = Vector2(-2427, 1769)
 scale = Vector2(3.935, 3.935)

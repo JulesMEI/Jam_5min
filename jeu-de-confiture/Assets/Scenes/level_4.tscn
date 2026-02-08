@@ -517,5 +517,5 @@ position = Vector2(-209, 1837)
 scale = Vector2(5.9536004, 1)
 
 [node name="death" parent="." unique_id=1169479447 instance=ExtResource("7_psbrp")]
-position = Vector2(-1976, 1533)
+position = Vector2(-1905, 1533)
 scale = Vector2(2.44, 1)

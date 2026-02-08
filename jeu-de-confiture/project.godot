@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 TransitionFade="*uid://cbrkmwdfwpr47"
 MusicPlayer="*uid://ckhd6pu5o44ub"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor]
 
 version_control/autoload_on_startup=true
