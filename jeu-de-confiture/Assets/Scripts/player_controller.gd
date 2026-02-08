@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 class_name PlayerController
-
 @export var timer: Timer
 @export var animated_sprite : AnimatedSprite2D
 @export var splash_dust : Dust
