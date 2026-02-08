@@ -525,7 +525,7 @@ position = Vector2(-1913, 1247)
 [node name="Portal" parent="." unique_id=1751167132 node_paths=PackedStringArray("controller") instance=ExtResource("5_dgsaq")]
 position = Vector2(-493, 1197)
 controller = NodePath("../Player")
-metadata/SceneToLoad = "level_end"
+metadata/SceneToLoad = "level_10"
 
 [node name="HUD" parent="." unique_id=195147303 instance=ExtResource("6_xfjb1")]
 
@@ -533,7 +533,7 @@ metadata/SceneToLoad = "level_end"
 
 [node name="death" parent="Killzones" unique_id=35116924 instance=ExtResource("7_c0o8l")]
 position = Vector2(-1947, 1746)
-scale = Vector2(0.77380645, 0.80852735)
+scale = Vector2(9.999, 0.634)
 
 [node name="Label" type="Label" parent="." unique_id=1922312888]
 offset_left = -1880.0
