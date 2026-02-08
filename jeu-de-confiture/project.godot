@@ -11,13 +11,18 @@ config_version=5
 [application]
 
 config/name="JeuDeConfiture"
-run/main_scene="uid://dfm2ywma4bdqu"
+run/main_scene="uid://cmf0jq3i4bhxg"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 TransitionFade="*uid://cbrkmwdfwpr47"
+MusicPlayer="*uid://bpdihumlg0wu"
+
+[editor]
+
+version_control/autoload_on_startup=true
 
 [input]
 

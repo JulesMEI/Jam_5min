@@ -34,6 +34,7 @@ var last_time_decrement = 0
 # const JUMP_VELOCITY = -400.0
 
 func _ready():
+	MusicPlayer._play_music()
 	positionStart = global_position
 	jump_vel = 10.0
 	speed = 10.0
@@ -46,6 +47,7 @@ func jump():
 		animated_sprite.scale = Vector2(0.6, 1.3)
 		splash_dust.play()
 		velocity.y = jump_vel * jump_mul
+		$Audio/Jump.play()
 		nbr_jump -= 1
 
 	if db_jump_cost < remaining_time and Input.is_action_just_pressed("jump") and not is_on_floor() and nbr_jump > 0:
@@ -55,7 +57,6 @@ func jump():
 		splash_dust.play()
 		velocity.y = jump_vel * jump_mul
 		nbr_jump -= 1
-
 
 #func roll(remaining_time : float = 100.0) -> bool :
 	#if not Input.is_action_pressed("roll"):
@@ -96,6 +97,7 @@ func dash():
 	$Timer.update_time(dash_cost)
 	velocity.x += speed * speed_mul * looking_at
 	velocity.y = jump_vel * jump_mul / 2
+	$Audio/Dash.play()
 
 
 func landing():
