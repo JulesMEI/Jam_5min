@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bog5v7lcc0o3c" path="res://Assets/Scenes/win_condition.tscn" id="5_ra7wl"]
 [ext_resource type="PackedScene" uid="uid://cu51dy8duh3xn" path="res://Assets/Scenes/hud.tscn" id="6_jklna"]
 [ext_resource type="PackedScene" uid="uid://bf3e7idq1qf7x" path="res://Assets/Scenes/death_arena.tscn" id="7_xymq5"]
-[ext_resource type="PackedScene" uid="uid://6cykofm1fm6i" path="res://tomato.tscn" id="8_432tj"]
+[ext_resource type="PackedScene" path="res://tomato.tscn" id="8_432tj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ssoek"]
 shader = ExtResource("1_l3ygb")
@@ -499,7 +499,7 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_1cifp")
 
-[node name="Level6" type="Node2D" unique_id=739711466]
+[node name="Level7" type="Node2D" unique_id=739711466]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1814645542]
 material = SubResource("ShaderMaterial_ssoek")
@@ -528,7 +528,6 @@ position = Vector2(-1937, 1183)
 [node name="Portal" parent="." unique_id=1751167132 node_paths=PackedStringArray("controller") instance=ExtResource("5_ra7wl")]
 position = Vector2(-1644, 2611)
 controller = NodePath("../Player")
-metadata/SceneToLoad = "level_end"
 
 [node name="HUD" parent="." unique_id=195147303 instance=ExtResource("6_jklna")]
 
