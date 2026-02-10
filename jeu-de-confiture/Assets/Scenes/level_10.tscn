@@ -509,6 +509,7 @@ position = Vector2(-1504, 1255)
 [node name="Portal" parent="." unique_id=1751167132 node_paths=PackedStringArray("controller") instance=ExtResource("5_g3f4v")]
 position = Vector2(1819, 2068)
 controller = NodePath("../Player")
+metadata/SceneToLoad = "level_end"
 
 [node name="HUD" parent="." unique_id=195147303 instance=ExtResource("6_8us4o")]
 

@@ -520,12 +520,11 @@ tile_set = SubResource("TileSet_f7ha1")
 tile_set = SubResource("TileSet_7373x")
 
 [node name="Player" parent="." unique_id=514449182 instance=ExtResource("4_yjjnr")]
-position = Vector2(-1123, 2578)
+position = Vector2(-1970, 1857)
 
 [node name="Portal" parent="." unique_id=1751167132 node_paths=PackedStringArray("controller") instance=ExtResource("5_xr61l")]
 position = Vector2(-1116, 2685)
 controller = NodePath("../Player")
-metadata/SceneToLoad = "level_end"
 
 [node name="HUD" parent="." unique_id=195147303 instance=ExtResource("6_yn0rm")]
 
