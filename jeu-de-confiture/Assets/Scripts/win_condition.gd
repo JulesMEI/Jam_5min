@@ -1,6 +1,6 @@
 extends Area2D
 
-const VAR_PATH = "res://Assets/Scenes/level_" 
+const VAR_PATH = "res://Assets/Scenes/levels/level_" 
 @export var controller : PlayerController
 
 
@@ -11,7 +11,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 		var next_level_path = VAR_PATH + str(next_level) + ".tscn" \
 			if !get_meta("SceneToLoad") else \
-			"Assets/Scenes/" + get_meta("SceneToLoad") + ".tscn"
+			"Assets/Scenes/levels/" + get_meta("SceneToLoad") + ".tscn"
 
 
 		TransitionFade.transition()

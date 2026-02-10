@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://6cykofm1fm6i"]
+[gd_scene format=3 uid="uid://c0bij0ypwmqi1"]
 
 [ext_resource type="Texture2D" uid="uid://ctum0m3lap0gt" path="res://Assets/Sprites/tomato.png" id="1_ajaoc"]
 [ext_resource type="Script" uid="uid://84e524kvhuwp" path="res://tomato.gd" id="1_bka0x"]

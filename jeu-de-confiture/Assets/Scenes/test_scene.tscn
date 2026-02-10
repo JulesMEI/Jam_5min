@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dqdltsrfeteu7" path="res://Assets/Scenes/player.tscn" id="2_2evn1"]
 [ext_resource type="PackedScene" uid="uid://bog5v7lcc0o3c" path="res://Assets/Scenes/win_condition.tscn" id="4_k5bmm"]
 [ext_resource type="PackedScene" uid="uid://cu51dy8duh3xn" path="res://Assets/Scenes/hud.tscn" id="5_hvq5l"]
+[ext_resource type="Texture2D" uid="uid://dsdq2bvjijsk5" path="res://icon.svg" id="5_mvfnm"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1trni"]
 distance = -4.0
@@ -24,3 +25,8 @@ controller = NodePath("../Player")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1719866129]
 shape = SubResource("WorldBoundaryShape2D_1trni")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=913146029]
+position = Vector2(3, 67)
+scale = Vector2(91.32001, 1)
+texture = ExtResource("5_mvfnm")

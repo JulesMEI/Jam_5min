@@ -1,104 +1,252 @@
-[gd_scene format=4 uid="uid://ddo8r1a8i386j"]
+[gd_scene format=4 uid="uid://djgdyoanebugg"]
 
-[ext_resource type="Script" path="res://Assets/Scripts/level_2.gd" id="1_wywo6"]
-[ext_resource type="PackedScene" uid="uid://dqdltsrfeteu7" path="res://Assets/Scenes/player.tscn" id="2_dlbb6"]
-[ext_resource type="PackedScene" uid="uid://bog5v7lcc0o3c" path="res://Assets/Scenes/win_condition.tscn" id="3_237av"]
-[ext_resource type="Shader" uid="uid://b85oy0d3u1lb3" path="res://Assets/Shaders/scrolling_bg.gdshader" id="3_tlord"]
-[ext_resource type="Texture2D" uid="uid://csf7vyanwo4m6" path="res://Assets/Sprites/Environnement/backgroundTemplate.png" id="4_41tge"]
-[ext_resource type="PackedScene" uid="uid://cu51dy8duh3xn" path="res://Assets/Scenes/hud.tscn" id="4_rur2o"]
-[ext_resource type="FontFile" uid="uid://gsbg0718grhb" path="res://Fonts/ImaginaryImages-O7VP.ttf" id="5_aiqx7"]
-[ext_resource type="Texture2D" uid="uid://4gorwvbp23nn" path="res://Assets/Sprites/Terrain/PikPng.com_wasd-png_1982208.png" id="5_dlbb6"]
-[ext_resource type="Texture2D" uid="uid://dpbfu3tvy488i" path="res://Assets/Sprites/Environnement/ziak.jpg" id="6_237av"]
-[ext_resource type="Texture2D" uid="uid://tocgkgmji0gw" path="res://Assets/Sprites/Terrain/Terrain.png" id="7_rur2o"]
+[ext_resource type="Shader" uid="uid://b85oy0d3u1lb3" path="res://Assets/Shaders/scrolling_bg.gdshader" id="1_nnog6"]
+[ext_resource type="PackedScene" uid="uid://dqdltsrfeteu7" path="res://Assets/Scenes/player.tscn" id="2_2evn1"]
+[ext_resource type="Texture2D" uid="uid://csf7vyanwo4m6" path="res://Assets/Sprites/Environnement/backgroundTemplate.png" id="2_k5bmm"]
+[ext_resource type="Texture2D" uid="uid://tocgkgmji0gw" path="res://Assets/Sprites/Terrain/Terrain.png" id="4_637wq"]
+[ext_resource type="PackedScene" uid="uid://bog5v7lcc0o3c" path="res://Assets/Scenes/win_condition.tscn" id="4_k5bmm"]
+[ext_resource type="PackedScene" uid="uid://bf3e7idq1qf7x" path="res://Assets/Scenes/death_arena.tscn" id="6_nnog6"]
+[ext_resource type="PackedScene" uid="uid://cu51dy8duh3xn" path="res://Assets/Scenes/hud.tscn" id="7_k5bmm"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0dgvr"]
-shader = ExtResource("3_tlord")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q0a32"]
+shader = ExtResource("1_nnog6")
 shader_parameter/tiling = Vector2(40, 40)
-shader_parameter/offset = Vector2(0.6, -0.4)
+shader_parameter/offset = Vector2(-0.5, 1)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dlbb6"]
-size = Vector2(42, 646.5)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k5bmm"]
+texture = ExtResource("4_637wq")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+1:0/0 = 0
+1:0/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+2:0/0 = 0
+2:0/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+3:0/0 = 0
+3:0/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+4:0/0 = 0
+4:0/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+5:0/0 = 0
+5:0/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+6:0/0 = 0
+6:0/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+7:0/0 = 0
+7:0/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+8:0/0 = 0
+8:0/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+9:0/0 = 0
+9:0/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+10:0/0 = 0
+10:0/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+11:0/0 = 0
+11:0/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+0:1/0 = 0
+0:1/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+1:1/0 = 0
+1:1/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+2:1/0 = 0
+2:1/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+3:1/0 = 0
+3:1/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+4:1/0 = 0
+4:1/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+5:1/0 = 0
+5:1/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+6:1/0 = 0
+6:1/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+7:1/0 = 0
+7:1/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+8:1/0 = 0
+8:1/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+9:1/0 = 0
+9:1/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+10:1/0 = 0
+10:1/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+11:1/0 = 0
+11:1/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+0:2/0 = 0
+0:2/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+1:2/0 = 0
+1:2/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+2:2/0 = 0
+2:2/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+3:2/0 = 0
+3:2/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+4:2/0 = 0
+4:2/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+5:2/0 = 0
+5:2/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+6:2/0 = 0
+6:2/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+7:2/0 = 0
+7:2/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+8:2/0 = 0
+8:2/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+9:2/0 = 0
+9:2/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+10:2/0 = 0
+10:2/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+11:2/0 = 0
+11:2/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+0:3/0 = 0
+0:3/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+1:3/0 = 0
+1:3/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+2:3/0 = 0
+2:3/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+3:3/0 = 0
+3:3/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+4:3/0 = 0
+4:3/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+5:3/0 = 0
+5:3/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+6:3/0 = 0
+6:3/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+7:3/0 = 0
+7:3/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+8:3/0 = 0
+8:3/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+9:3/0 = 0
+9:3/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+10:3/0 = 0
+10:3/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+11:3/0 = 0
+11:3/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+0:4/0 = 0
+0:4/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+1:4/0 = 0
+1:4/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+2:4/0 = 0
+2:4/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+3:4/0 = 0
+3:4/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+4:4/0 = 0
+4:4/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+5:4/0 = 0
+5:4/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+6:4/0 = 0
+6:4/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+7:4/0 = 0
+7:4/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+8:4/0 = 0
+8:4/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+9:4/0 = 0
+9:4/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+10:4/0 = 0
+10:4/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+11:4/0 = 0
+11:4/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+0:5/0 = 0
+0:5/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+1:5/0 = 0
+1:5/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+2:5/0 = 0
+2:5/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+3:5/0 = 0
+3:5/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+4:5/0 = 0
+4:5/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+5:5/0 = 0
+5:5/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+6:5/0 = 0
+6:5/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+7:5/0 = 0
+7:5/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+8:5/0 = 0
+8:5/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+9:5/0 = 0
+9:5/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+10:5/0 = 0
+10:5/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+11:5/0 = 0
+11:5/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+0:6/0 = 0
+0:6/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+1:6/0 = 0
+1:6/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+2:6/0 = 0
+2:6/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+3:6/0 = 0
+3:6/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+4:6/0 = 0
+4:6/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+5:6/0 = 0
+5:6/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+6:6/0 = 0
+6:6/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+7:6/0 = 0
+7:6/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+8:6/0 = 0
+8:6/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+9:6/0 = 0
+9:6/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+10:6/0 = 0
+10:6/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+11:6/0 = 0
+11:6/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+0:7/0 = 0
+0:7/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+1:7/0 = 0
+1:7/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+2:7/0 = 0
+2:7/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+3:7/0 = 0
+3:7/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+4:7/0 = 0
+4:7/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+5:7/0 = 0
+5:7/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+6:7/0 = 0
+6:7/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+7:7/0 = 0
+7:7/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+9:7/0 = 0
+9:7/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+10:7/0 = 0
+10:7/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+0:8/0 = 0
+0:8/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+1:8/0 = 0
+1:8/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+2:8/0 = 0
+2:8/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+3:8/0 = 0
+3:8/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+8:8/0 = 0
+8:8/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+9:8/0 = 0
+9:8/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+10:8/0 = 0
+10:8/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+11:8/0 = 0
+11:8/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+0:9/0 = 0
+0:9/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+1:9/0 = 0
+1:9/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+4:9/0 = 0
+4:9/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+5:9/0 = 0
+5:9/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+6:9/0 = 0
+6:9/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+7:9/0 = 0
+7:9/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+8:9/0 = 0
+8:9/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+9:9/0 = 0
+9:9/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+10:9/0 = 0
+10:9/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
+11:9/0 = 0
+11:9/0/modulate = Color(1, 0.73333335, 0.7647059, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_237av"]
-atlas = ExtResource("5_dlbb6")
-region = Rect2(0, 0, 640, 757)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_wywo6"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_237av")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="Animation" id="Animation_ijibd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.4, 0.4)]
-}
-
-[sub_resource type="Animation" id="Animation_4prdx"]
-resource_name = "ZiakAnimation"
-length = 2.0
-loop_mode = 1
-step = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.2833333, 1.5333333, 1.7833333, 2),
-"transitions": PackedFloat32Array(2, 0.5, 2, 0.5, 2, 0.5, 2, 0.5, 2),
-"update": 0,
-"values": [-0.17453292519943295, 0.0, 0.17453292519943295, 0.0, -0.17453292519943295, 0.0, 0.17453292519943295, 0.0, -0.17453292519943295]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1.5, 0.5946036, 1.5),
-"update": 0,
-"values": [Vector2(0.25, 0.25), Vector2(0.4, 0.4), Vector2(0.25, 0.25)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_sojbp"]
-_data = {
-&"RESET": SubResource("Animation_ijibd"),
-&"ZiakAnimation": SubResource("Animation_4prdx")
-}
+[sub_resource type="TileSet" id="TileSet_2evn1"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_k5bmm")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nnog6"]
-texture = ExtResource("7_rur2o")
+texture = ExtResource("4_637wq")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.931538, -13.701122, 16.568798, -13.701122, 16.250168, 14.0197525, -15.931538, 13.701122)
@@ -318,148 +466,32 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_nnog6")
 
-[sub_resource type="LabelSettings" id="LabelSettings_4ppop"]
-font = ExtResource("5_aiqx7")
+[node name="Level1" type="Node2D" unique_id=331908693]
 
-[sub_resource type="LabelSettings" id="LabelSettings_tlord"]
-font = ExtResource("5_aiqx7")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=168997713]
+material = SubResource("ShaderMaterial_q0a32")
+position = Vector2(28.00003, 742.0001)
+scale = Vector2(35.31693, 35.31693)
+texture = ExtResource("2_k5bmm")
 
-[sub_resource type="LabelSettings" id="LabelSettings_41tge"]
-font = ExtResource("5_aiqx7")
+[node name="Player" parent="." unique_id=514449182 instance=ExtResource("2_2evn1")]
+position = Vector2(-257, -5)
 
-[sub_resource type="LabelSettings" id="LabelSettings_0dgvr"]
-font = ExtResource("5_aiqx7")
-
-[sub_resource type="LabelSettings" id="LabelSettings_ijibd"]
-font = ExtResource("5_aiqx7")
-
-[sub_resource type="LabelSettings" id="LabelSettings_237av"]
-font_color = Color(1, 0, 0, 1)
-
-[node name="tutorial" type="Node2D" unique_id=1727485768]
-script = ExtResource("1_wywo6")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=804207866]
-material = SubResource("ShaderMaterial_0dgvr")
-position = Vector2(1803.8267, 977.99976)
-scale = Vector2(49.65354, 49.65354)
-texture = ExtResource("4_41tge")
-
-[node name="Tricky portal" parent="." unique_id=1751167132 node_paths=PackedStringArray("controller") instance=ExtResource("3_237av")]
-position = Vector2(2461, -128)
+[node name="Portal" parent="." unique_id=1751167132 node_paths=PackedStringArray("controller") instance=ExtResource("4_k5bmm")]
+position = Vector2(208, -40)
 controller = NodePath("../Player")
 
-[node name="Portal" parent="." unique_id=612292203 node_paths=PackedStringArray("controller") instance=ExtResource("3_237av")]
-position = Vector2(2935, -32)
-controller = NodePath("../Player")
+[node name="nature" type="TileMapLayer" parent="." unique_id=221632273]
+position = Vector2(1, 0)
+tile_map_data = PackedByteArray("AAD6////AAAEAAQAAAD4////AAAFAAQAAAD3////AAAFAAQAAAACAAIAAAAFAAEAAAACAAEAAAAFAAAAAAABAAIAAAAEAAEAAAABAAEAAAAEAAAAAAACAAYAAAAEAAAAAAD9/wcAAAAEAAAAAAD7/wcAAAAEAAAAAAD4/wgAAAAEAAAAAAD5/wUAAAAEAAAAAAD6/wYAAAAFAAEAAAD8/wgAAAAFAAEAAAD5/wkAAAAFAAEAAAD+/wgAAAAFAAEAAAADAAcAAAAFAAEAAAACAAcAAAAEAAEAAAD7/wgAAAAEAAEAAAD9/wgAAAAEAAEAAAD5/wYAAAAEAAEAAAD4/wkAAAAEAAEAAAD5/wgAAAAFAAAAAAD6/wUAAAAFAAAAAAD8/wcAAAAFAAAAAAD+/wcAAAAFAAAAAAADAAYAAAAFAAAAAAD///7/AAAEAAIAAAD/////AAAEAAMAAAAAAP7/AAAFAAIAAAAAAP//AAAFAAMAAAD7//7/AAAEAAIAAAD7////AAAEAAMAAAD8//7/AAAFAAIAAAD8////AAAFAAMAAAD9//7/AAAEAAIAAAD9////AAAEAAMAAAD+//7/AAAFAAIAAAD+////AAAFAAMAAAA=")
+tile_set = SubResource("TileSet_2evn1")
 
-[node name="Player" parent="." unique_id=514449182 instance=ExtResource("2_dlbb6")]
-position = Vector2(-120, -7)
-
-[node name="HUD" parent="." unique_id=195147303 instance=ExtResource("4_rur2o")]
-
-[node name="StaticBody" type="StaticBody2D" parent="." unique_id=1979975354]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody" unique_id=13508432]
-position = Vector2(-495, 7)
-shape = SubResource("RectangleShape2D_dlbb6")
-
-[node name="pannard" type="AnimatedSprite2D" parent="." unique_id=512762467]
-position = Vector2(218.00002, 133.00003)
-scale = Vector2(0.19296873, 0.19336194)
-sprite_frames = SubResource("SpriteFrames_wywo6")
-
-[node name="Ziak" type="Sprite2D" parent="." unique_id=1078077607]
-position = Vector2(9.536743e-07, -227)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("6_237av")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Ziak" unique_id=286134468]
-libraries/ = SubResource("AnimationLibrary_sojbp")
-autoplay = &"ZiakAnimation"
-
-[node name="collisions" type="TileMapLayer" parent="." unique_id=2082537229]
-tile_map_data = PackedByteArray("AAAfAP//AAABAAMAAAAmAP3/AAADAAAAAADC//P/AAAIAAEAAADC//T/AAAIAAEAAADC//X/AAAIAAEAAADC//b/AAAIAAEAAADC//f/AAAIAAEAAADC//j/AAAIAAEAAADD//P/AAAJAAEAAADD//T/AAAJAAEAAADD//X/AAAJAAEAAADD//b/AAAJAAEAAADD//f/AAAJAAEAAADD//j/AAAJAAEAAADq/wAAAAABAAMAAADr/wAAAAACAAMAAADs/wAAAAACAAMAAADt/wAAAAACAAMAAADu/wAAAAACAAMAAADv/wAAAAACAAMAAADw/wAAAAACAAMAAADx/wAAAAACAAMAAADy/wAAAAACAAMAAADz/wAAAAACAAMAAAD0/wAAAAACAAMAAAD1/wAAAAACAAMAAAD2/wAAAAACAAMAAAD3/wAAAAACAAMAAAD4/wAAAAACAAMAAAD5/wAAAAACAAMAAAD6/wAAAAACAAMAAAD7/wAAAAACAAMAAAD8/wAAAAACAAMAAAD9/wAAAAACAAMAAAD+/wAAAAACAAMAAAD//wAAAAACAAMAAAAAAAAAAAACAAMAAAABAAAAAAACAAMAAAACAAAAAAACAAMAAAADAAAAAAACAAMAAAAEAAAAAAACAAMAAAAFAAAAAAACAAMAAAAGAAAAAAACAAMAAAAHAAAAAAACAAMAAAAIAAAAAAACAAMAAAAJAAAAAAACAAMAAAAKAAAAAAACAAMAAAALAAAAAAACAAMAAAAMAAAAAAACAAMAAAANAAAAAAACAAMAAAAOAAAAAAACAAMAAAAPAAAAAAACAAMAAAAQAAAAAAACAAMAAAARAAAAAAACAAMAAAASAAAAAAACAAMAAAATAAAAAAACAAMAAAAUAAAAAAACAAMAAAAVAAAAAAACAAMAAAAWAAAAAAACAAMAAAAXAAAAAAACAAMAAAAYAAAAAAACAAMAAAAZAAAAAAACAAMAAAAaAAAAAAACAAMAAAAbAAAAAAACAAMAAAAcAAAAAAACAAMAAAAdAAAAAAACAAMAAAAeAAAAAAACAAMAAAAfAAAAAAACAAMAAAAgAAAAAAACAAMAAAAhAAAAAAACAAMAAAAiAAAAAAACAAMAAAAjAAAAAAACAAMAAAAkAAAAAAACAAMAAAAlAAAAAAACAAMAAAAmAAAAAAACAAMAAAAnAAAAAAACAAMAAAAoAAAAAAACAAMAAAApAAAAAAACAAMAAAAqAAAAAAACAAMAAAArAAAAAAACAAMAAAAsAAAAAAACAAMAAAAtAAAAAAACAAMAAAAuAAAAAAACAAMAAAAvAAAAAAACAAMAAAAwAAAAAAACAAMAAAAxAAAAAAACAAMAAAAyAAAAAAACAAMAAAAzAAAAAAACAAMAAAA0AAAAAAACAAMAAAA1AAAAAAACAAMAAAA2AAAAAAACAAMAAAA3AAAAAAACAAMAAAA4AAAAAAACAAMAAAA5AAAAAAACAAMAAAA6AAAAAAACAAMAAAA7AAAAAAACAAMAAAA8AAAAAAACAAMAAAA9AAAAAAACAAMAAAA+AAAAAAACAAMAAAA/AAAAAAACAAMAAABAAAAAAAACAAMAAABBAAAAAAACAAMAAABCAAAAAAACAAMAAABDAAAAAAACAAMAAABEAAAAAAACAAMAAABFAAAAAAACAAMAAABGAAAAAAACAAMAAABHAAAAAAACAAMAAABIAAAAAAACAAMAAABJAAAAAAACAAMAAABKAAAAAAACAAMAAABLAAAAAAACAAMAAABMAAAAAAACAAMAAABNAAAAAAACAAMAAABOAAAAAAACAAMAAABPAAAAAAACAAMAAABQAAAAAAACAAMAAABRAAAAAAACAAMAAABSAAAAAAACAAMAAABTAAAAAAACAAMAAABUAAAAAAACAAMAAABVAAAAAAACAAMAAABWAAAAAAACAAMAAABXAAAAAAACAAMAAABYAAAAAAACAAMAAABZAAAAAAACAAMAAABaAAAAAAACAAMAAABbAAAAAAACAAMAAABcAAAAAAACAAMAAABdAAAAAAACAAMAAABeAAAAAAACAAMAAABfAAAAAAACAAMAAABgAAAAAAACAAMAAABhAAAAAAACAAMAAABiAAAAAAACAAMAAABjAAAAAAACAAMAAABkAAAAAAACAAMAAABlAAAAAAACAAMAAABmAAAAAAACAAMAAABnAAAAAAACAAMAAABoAAAAAAACAAMAAABpAAAAAAACAAMAAABqAAAAAAACAAMAAABrAAAAAAACAAMAAABsAAAAAAACAAMAAABtAAAAAAACAAMAAABuAAAAAAACAAMAAABvAAAAAAACAAMAAABwAAAAAAACAAMAAABxAAAAAAACAAMAAAByAAAAAAACAAMAAABzAAAAAAACAAMAAAB0AAAAAAACAAMAAAB1AAAAAAACAAMAAAB2AAAAAAACAAMAAAB3AAAAAAACAAMAAAB4AAAAAAACAAMAAAB5AAAAAAACAAMAAAB6AAAAAAACAAMAAAB7AAAAAAACAAMAAAB8AAAAAAADAAMAAAAmAP7/AAADAAEAAAAmAP//AAADAAIAAAA0APv/AAABAAMAAAA1APv/AAACAAMAAAA2APv/AAADAAMAAAA3APv/AAAAAAAAAAA3APz/AAAAAAEAAAA3AP3/AAAAAAEAAAA3AP7/AAAAAAEAAAA3AP//AAAAAAIAAAAgAP//AAACAAMAAAAhAP//AAADAAMAAAAiAP3/AAABAAAAAAAiAP7/AAABAAEAAAAiAP//AAABAAIAAAAjAP3/AAACAAAAAAAjAP7/AAACAAEAAAAjAP//AAACAAIAAAAkAP3/AAACAAAAAAAkAP7/AAACAAEAAAAkAP//AAACAAIAAAAlAP3/AAACAAAAAAAlAP7/AAACAAEAAAAlAP//AAACAAIAAAA=")
+[node name="collisions" type="TileMapLayer" parent="." unique_id=461954517]
+tile_map_data = PackedByteArray("AAAAAAAAAAACAAAAAAD//wAAAAACAAAAAAD+/wAAAAACAAAAAAD9/wAAAAACAAAAAAABAAAAAAACAAAAAAACAAAAAAACAAAAAAADAAAAAAACAAAAAAAEAAAAAAACAAAAAAAFAAAAAAACAAAAAAAGAAAAAAACAAAAAAAHAAAAAAADAAAAAAD3/wAAAAABAAAAAAD8/wAAAAACAAAAAAD7/wAAAAACAAAAAAD6/wAAAAACAAAAAAD5/wAAAAACAAAAAAD4/wAAAAACAAAAAAD3/wEAAAABAAEAAAD3/wIAAAABAAEAAAD3/wMAAAABAAEAAAD3/wQAAAABAAEAAAD3/wUAAAABAAEAAAD3/wYAAAABAAEAAAD3/wcAAAABAAEAAAD3/wgAAAABAAEAAAD3/wkAAAABAAEAAAD3/woAAAABAAEAAAAHAAEAAAADAAEAAAAHAAIAAAADAAEAAAAHAAMAAAADAAEAAAAHAAQAAAADAAEAAAAHAAUAAAADAAEAAAAHAAYAAAADAAEAAAAHAAcAAAADAAEAAAAHAAgAAAADAAEAAAAHAAkAAAADAAEAAAAHAAoAAAADAAEAAAAGAAEAAAACAAEAAAAFAAIAAAACAAEAAAAEAAIAAAACAAEAAAADAAIAAAACAAEAAAACAAIAAAACAAEAAAABAAIAAAACAAEAAAAAAAIAAAACAAEAAAAAAAMAAAACAAEAAAD//wMAAAACAAEAAAD+/wMAAAACAAEAAAD9/wMAAAACAAEAAAD8/wMAAAAFAAEAAAD7/wMAAAAEAAEAAAD7/wIAAAAEAAAAAAD8/wIAAAAFAAAAAAD9/wIAAAACAAEAAAD+/wIAAAACAAEAAAD//wIAAAACAAEAAAAFAAEAAAACAAEAAAAEAAEAAAACAAEAAAADAAEAAAACAAEAAAACAAEAAAACAAEAAAABAAEAAAACAAEAAAAAAAEAAAACAAEAAAD//wEAAAACAAEAAAD+/wEAAAACAAEAAAD9/wEAAAACAAEAAAD8/wEAAAACAAEAAAD7/wEAAAACAAEAAAD6/wEAAAACAAEAAAD5/wEAAAACAAEAAAD5/wIAAAACAAEAAAD4/wIAAAACAAEAAAD4/wEAAAACAAEAAAD6/wIAAAACAAEAAAD6/wMAAAACAAEAAAD4/wMAAAACAAEAAAD5/wMAAAACAAEAAAAGAAIAAAACAAEAAAAGAAMAAAACAAEAAAAFAAMAAAACAAEAAAAEAAMAAAACAAEAAAADAAMAAAACAAEAAAACAAMAAAACAAEAAAABAAMAAAACAAEAAAAGAAQAAAACAAEAAAAFAAQAAAACAAEAAAAEAAQAAAACAAEAAAADAAQAAAACAAEAAAACAAQAAAACAAEAAAABAAQAAAACAAEAAAAAAAQAAAACAAEAAAD//wQAAAACAAEAAAD+/wQAAAACAAEAAAD9/wQAAAACAAEAAAD8/wQAAAACAAEAAAD7/wQAAAACAAEAAAD6/wQAAAACAAEAAAD5/wQAAAACAAEAAAD4/wQAAAACAAEAAAD4/wUAAAACAAEAAAD4/wYAAAACAAEAAAD4/wcAAAACAAEAAAD4/wgAAAACAAEAAAD4/wkAAAACAAEAAAD4/woAAAACAAEAAAD5/wUAAAACAAEAAAD5/wYAAAACAAEAAAD5/wcAAAACAAEAAAD5/wgAAAACAAEAAAD5/wkAAAACAAEAAAD5/woAAAACAAEAAAD6/wUAAAACAAEAAAD6/wYAAAACAAEAAAD6/wcAAAACAAEAAAD6/wgAAAACAAEAAAD6/wkAAAACAAEAAAD6/woAAAACAAEAAAD7/wUAAAACAAEAAAD7/wYAAAACAAEAAAD7/wcAAAACAAEAAAD7/wgAAAACAAEAAAD7/wkAAAACAAEAAAD7/woAAAACAAEAAAD8/wUAAAACAAEAAAD8/wYAAAACAAEAAAD8/wcAAAACAAEAAAD8/wgAAAACAAEAAAD8/wkAAAACAAEAAAD8/woAAAACAAEAAAD9/wUAAAACAAEAAAD9/wYAAAACAAEAAAD9/wcAAAACAAEAAAD9/wgAAAACAAEAAAD9/wkAAAACAAEAAAD9/woAAAAEAAAAAAD+/wUAAAACAAEAAAD+/wYAAAACAAEAAAD+/wcAAAACAAEAAAD+/wgAAAACAAEAAAD+/wkAAAACAAEAAAD+/woAAAAFAAAAAAD//wUAAAACAAEAAAD//wYAAAACAAEAAAD//wcAAAACAAEAAAD//wgAAAACAAEAAAD//wkAAAACAAEAAAD//woAAAACAAEAAAAAAAUAAAACAAEAAAAAAAYAAAACAAEAAAAAAAcAAAACAAEAAAAAAAgAAAACAAEAAAAAAAkAAAACAAEAAAAAAAoAAAACAAEAAAABAAUAAAACAAEAAAABAAYAAAACAAEAAAABAAcAAAACAAEAAAABAAgAAAACAAEAAAABAAkAAAAEAAAAAAABAAoAAAAEAAEAAAACAAUAAAACAAEAAAACAAYAAAACAAEAAAACAAcAAAACAAEAAAACAAgAAAACAAEAAAACAAkAAAAFAAAAAAACAAoAAAAFAAEAAAADAAUAAAACAAEAAAADAAYAAAACAAEAAAADAAcAAAACAAEAAAADAAgAAAACAAEAAAADAAkAAAACAAEAAAADAAoAAAACAAEAAAAEAAUAAAACAAEAAAAEAAYAAAACAAEAAAAEAAcAAAACAAEAAAAEAAgAAAACAAEAAAAEAAkAAAACAAEAAAAEAAoAAAACAAEAAAAFAAUAAAACAAEAAAAFAAYAAAACAAEAAAAFAAcAAAACAAEAAAAFAAgAAAACAAEAAAAFAAkAAAACAAEAAAAFAAoAAAACAAEAAAAGAAUAAAACAAEAAAAGAAYAAAACAAEAAAAGAAcAAAACAAEAAAAGAAgAAAACAAEAAAAGAAkAAAACAAEAAAAGAAoAAAACAAEAAAD+////AAAEAAQAAAADAP//AAAEAAQAAAD3/wsAAAABAAEAAAD3/wwAAAABAAEAAAD3/w0AAAABAAEAAAD3/w4AAAABAAEAAAD3/w8AAAABAAEAAAD3/xAAAAABAAEAAAD3/xEAAAABAAEAAAD3/xIAAAABAAEAAAD4/wsAAAACAAEAAAD4/wwAAAACAAEAAAD4/w0AAAACAAEAAAD4/w4AAAACAAEAAAD4/w8AAAACAAEAAAD4/xAAAAACAAEAAAD4/xEAAAACAAEAAAD4/xIAAAACAAEAAAD5/wsAAAACAAEAAAD5/wwAAAACAAEAAAD5/w0AAAACAAEAAAD5/w4AAAACAAEAAAD5/w8AAAACAAEAAAD5/xAAAAACAAEAAAD5/xEAAAACAAEAAAD5/xIAAAACAAEAAAD6/wsAAAACAAEAAAD6/wwAAAACAAEAAAD6/w0AAAACAAEAAAD6/w4AAAACAAEAAAD6/w8AAAAEAAAAAAD6/xAAAAAEAAEAAAD6/xEAAAACAAEAAAD6/xIAAAACAAEAAAD7/wsAAAACAAEAAAD7/wwAAAACAAEAAAD7/w0AAAACAAEAAAD7/w4AAAACAAEAAAD7/w8AAAAFAAAAAAD7/xAAAAAFAAEAAAD7/xEAAAACAAEAAAD7/xIAAAACAAEAAAD8/wsAAAACAAEAAAD8/wwAAAACAAEAAAD8/w0AAAACAAEAAAD8/w4AAAACAAEAAAD8/w8AAAACAAEAAAD8/xAAAAACAAEAAAD8/xEAAAACAAEAAAD8/xIAAAACAAEAAAD9/wsAAAAEAAEAAAD9/wwAAAACAAEAAAD9/w0AAAACAAEAAAD9/w4AAAACAAEAAAD9/w8AAAACAAEAAAD9/xAAAAACAAEAAAD9/xEAAAACAAEAAAD9/xIAAAACAAEAAAD+/wsAAAAFAAEAAAD+/wwAAAACAAEAAAD+/w0AAAACAAEAAAD+/w4AAAACAAEAAAD+/w8AAAACAAEAAAD+/xAAAAACAAEAAAD+/xEAAAACAAEAAAD+/xIAAAACAAEAAAD//wsAAAACAAEAAAD//wwAAAACAAEAAAD//w0AAAACAAEAAAD//w4AAAACAAEAAAD//w8AAAACAAEAAAD//xAAAAACAAEAAAD//xEAAAACAAEAAAD//xIAAAACAAEAAAAAAAsAAAACAAEAAAAAAAwAAAACAAEAAAAAAA0AAAACAAEAAAAAAA4AAAACAAEAAAAAAA8AAAACAAEAAAAAABAAAAACAAEAAAAAABEAAAACAAEAAAAAABIAAAACAAEAAAABAAsAAAACAAEAAAABAAwAAAACAAEAAAABAA0AAAACAAEAAAABAA4AAAAEAAAAAAABAA8AAAAEAAEAAAABABAAAAACAAEAAAABABEAAAACAAEAAAABABIAAAACAAEAAAACAAsAAAACAAEAAAACAAwAAAACAAEAAAACAA0AAAACAAEAAAACAA4AAAAFAAAAAAACAA8AAAAFAAEAAAACABAAAAACAAEAAAACABEAAAACAAEAAAACABIAAAACAAEAAAADAAsAAAACAAEAAAADAAwAAAACAAEAAAADAA0AAAACAAEAAAADAA4AAAACAAEAAAADAA8AAAACAAEAAAADABAAAAACAAEAAAADABEAAAACAAEAAAADABIAAAACAAEAAAAEAAsAAAACAAEAAAAEAAwAAAACAAEAAAAEAA0AAAACAAEAAAAEAA4AAAACAAEAAAAEAA8AAAAEAAAAAAAEABAAAAAEAAEAAAAEABEAAAACAAEAAAAEABIAAAACAAEAAAAFAAsAAAACAAEAAAAFAAwAAAACAAEAAAAFAA0AAAACAAEAAAAFAA4AAAACAAEAAAAFAA8AAAAFAAAAAAAFABAAAAAFAAEAAAAFABEAAAACAAEAAAAFABIAAAACAAEAAAAGAAsAAAACAAEAAAAGAAwAAAACAAEAAAAGAA0AAAACAAEAAAAGAA4AAAACAAEAAAAGAA8AAAACAAEAAAAGABAAAAACAAEAAAAGABEAAAACAAEAAAAGABIAAAACAAEAAAAHAAsAAAADAAEAAAAHAAwAAAADAAEAAAAHAA0AAAADAAEAAAAHAA4AAAADAAEAAAAHAA8AAAADAAEAAAAHABAAAAADAAEAAAAHABEAAAADAAEAAAAHABIAAAADAAEAAAD8//7/AAAEAAIAAAD8////AAAEAAMAAAD9//7/AAAFAAIAAAD9////AAAFAAMAAAA=")
 tile_set = SubResource("TileSet_nnog6")
 
-[node name="Explication" type="Node2D" parent="." unique_id=726122497]
+[node name="death" parent="." unique_id=154333834 instance=ExtResource("6_nnog6")]
+position = Vector2(3, 535)
+scale = Vector2(4.4000015, 1)
 
-[node name="Title" type="Label" parent="Explication" unique_id=1832752441]
-offset_left = -332.0
-offset_top = -179.0
-offset_right = 373.0
-offset_bottom = -130.0
-text = "HU HU (prendre la voix de ziak) 
-Tutorial: How to play JustineTimeTime S/O Trei Degete"
-label_settings = SubResource("LabelSettings_4ppop")
-horizontal_alignment = 1
-
-[node name="ExplicationTime" type="Label" parent="Explication" unique_id=955198341]
-offset_left = 312.0
-offset_top = -182.0
-offset_right = 1017.0
-offset_bottom = -133.0
-text = "Each action cost you time such as : Jump, double jump and dash
-you can see it update on the timer above you
-Jumping and Dashing : -50 seconds
-Airborn jump : -25 seconds"
-label_settings = SubResource("LabelSettings_tlord")
-horizontal_alignment = 1
-
-[node name="ExplicationReload" type="Label" parent="Explication" unique_id=2115659220]
-offset_left = 1142.0
-offset_top = -88.0
-offset_right = 1803.0
-offset_bottom = -7.0
-text = "If you are stuck you can restart the level with 
-the R key and restart your timer"
-label_settings = SubResource("LabelSettings_tlord")
-horizontal_alignment = 1
-
-[node name="ExplicationJump" type="Label" parent="Explication" unique_id=2141175142]
-offset_left = 881.0
-offset_top = -289.0
-offset_right = 1586.0
-offset_bottom = -240.0
-text = "You can jump with the keys: space, z and arrow up
-You can dash with both of the shift keys"
-label_settings = SubResource("LabelSettings_41tge")
-horizontal_alignment = 1
-
-[node name="GLHF" type="Label" parent="Explication" unique_id=1371483455]
-offset_left = 2889.0
-offset_top = -106.0
-offset_right = 2980.0
-offset_bottom = -67.0
-text = "Good luck !
-,':)"
-label_settings = SubResource("LabelSettings_0dgvr")
-horizontal_alignment = 1
-
-[node name="TryItYourself" type="Label" parent="Explication" unique_id=1723781820]
-offset_left = 2113.0
-offset_top = -226.0
-offset_right = 2818.0
-offset_bottom = -166.0
-text = "Now time (time) for you to go along the journey !
-Oh wait you dont have enough time to jump ?
-That's unfortunate, if only there was another exit..."
-label_settings = SubResource("LabelSettings_0dgvr")
-horizontal_alignment = 1
-
-[node name="Movement" type="Label" parent="Explication" unique_id=1591979413]
-offset_left = -346.0
-offset_top = 126.0
-offset_right = 80.0
-offset_bottom = 149.0
-text = "To move use the keys WASD/ZQSD and the arrows keys"
-label_settings = SubResource("LabelSettings_ijibd")
-
-[node name="WARNING" type="Label" parent="Explication" unique_id=800584667]
-offset_left = -702.0
-offset_top = -18.0
-offset_right = -491.0
-offset_bottom = 5.0
-rotation = -0.87266463
-text = "GO BACK TO THE TUTORIAL"
-label_settings = SubResource("LabelSettings_237av")
+[node name="HUD" parent="." unique_id=195147303 instance=ExtResource("7_k5bmm")]

@@ -561,7 +561,7 @@ radius = 11.0
 script = ExtResource("1_6cd4h")
 timer = NodePath("Timer")
 animated_sprite = NodePath("Graphical/AnimatedSprite2D")
-splash_dust = NodePath("Graphical/LandingDust")
+splash_dust = NodePath("Graphical/SkidDust")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1090173009]
 position_smoothing_enabled = true

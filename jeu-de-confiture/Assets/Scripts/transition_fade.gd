@@ -15,7 +15,7 @@ func _on_animation_finished(anim_name):
 		AnimPlayer.play("fade_in")
 	elif anim_name == "fade_in":
 		colorRect.visible = false
-	
+
 func transition():
 	colorRect.visible = true
 	AnimPlayer.play("fade_out")
