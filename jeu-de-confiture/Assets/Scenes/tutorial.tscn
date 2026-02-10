@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://ddo8r1a8i386j"]
 
-[ext_resource type="Script" path="res://Assets/Scripts/level_2.gd" id="1_wywo6"]
+[ext_resource type="Script" uid="uid://d37572nuh8exa" path="res://Assets/Scripts/level_2.gd" id="1_wywo6"]
 [ext_resource type="PackedScene" uid="uid://dqdltsrfeteu7" path="res://Assets/Scenes/player.tscn" id="2_dlbb6"]
 [ext_resource type="PackedScene" uid="uid://bog5v7lcc0o3c" path="res://Assets/Scenes/win_condition.tscn" id="3_237av"]
 [ext_resource type="Shader" uid="uid://b85oy0d3u1lb3" path="res://Assets/Shaders/scrolling_bg.gdshader" id="3_tlord"]
@@ -409,7 +409,19 @@ offset_top = -182.0
 offset_right = 1017.0
 offset_bottom = -133.0
 text = "Each action cost you time such as : Jump, double jump and dash
-you can see it update on the timer above you"
+you can see it update on the timer above you
+Jumping and Dashing : -50 seconds
+Airborn jump : -25 seconds"
+label_settings = SubResource("LabelSettings_tlord")
+horizontal_alignment = 1
+
+[node name="ExplicationReload" type="Label" parent="Explication" unique_id=2115659220]
+offset_left = 1142.0
+offset_top = -88.0
+offset_right = 1803.0
+offset_bottom = -7.0
+text = "If you are stuck you can restart the level with 
+the R key and restart your timer"
 label_settings = SubResource("LabelSettings_tlord")
 horizontal_alignment = 1
 

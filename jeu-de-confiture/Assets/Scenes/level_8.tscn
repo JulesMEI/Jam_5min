@@ -507,6 +507,7 @@ scale = Vector2(36, 36)
 texture = ExtResource("2_5iabg")
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=1956146420]
+tile_map_data = PackedByteArray("AADu/2cAAAAIAAYAAADu/2gAAAAIAAYAAADu/2kAAAAIAAYAAAA=")
 tile_set = SubResource("TileSet_wsl6g")
 
 [node name="collisions2" type="TileMapLayer" parent="." unique_id=1848287678]
