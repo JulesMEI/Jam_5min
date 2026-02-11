@@ -6,7 +6,7 @@ class_name PlayerController
 @export var splash_dust : Dust
 
 @export var speed = 10.0
-@export var jump_vel = 15.0
+@export var jump_vel = 10.0
 
 var speed_mul = 30.0
 var slow_mul = 0.1
@@ -36,8 +36,6 @@ var last_time_decrement = 0
 
 func _ready():
 	positionStart = global_position
-	jump_vel = 10.0
-	speed = 10.0
 
 func normalize_scale(delta):
 	animated_sprite.scale.x = move_toward(animated_sprite.scale.x, 1, 6  *  delta)
