@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://ckhd6pu5o44ub"]
 
 [ext_resource type="AudioStream" uid="uid://rkrs6vb1s1fo" path="res://Sound/Music/Pu-Li-Ru-La_spotdown.org.mp3" id="1_yj681"]
+[ext_resource type="Script" uid="uid://kpi17ac7cy06" path="res://Assets/Scripts/music_player.gd" id="2_u3iom"]
 
 [node name="Node" type="Node" unique_id=712393252]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=879683455]
 stream = ExtResource("1_yj681")
 volume_db = -15.0
-autoplay = true
+script = ExtResource("2_u3iom")
