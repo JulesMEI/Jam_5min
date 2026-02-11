@@ -1,6 +1,6 @@
 extends Camera2D
 
-@onready var player: CharacterBody2D = $".."
+@onready var player: PlayerController = $".."
 
 var shake_intensify : float = 0.0
 var active_shake_time : float = 0.0
@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 	if active_shake_time > 0:
 		shake_time += delta * shake_time_speed
 		active_shake_time -= delta
-		
+
 		offset = Vector2(
 			noise.get_noise_2d(shake_time, 0) * shake_intensify,
 			noise.get_noise_2d(0, shake_time) * shake_intensify
@@ -36,5 +36,6 @@ func screen_shake(intensity : int, time : float):
 	shake_time = 2.0
 
 func _process(delta: float) -> void:
-	position = lerp(position, player.get_position_delta(), delta * 1)
+	if (!player.death) :
+		position = lerp(position, player.get_position_delta(), delta * 1)
 	pass

@@ -23,6 +23,7 @@ var was_airborne = false
 
 var direction = 0
 var can_control : bool = true
+var can_move : bool = true
 var positionStart
 var death : bool = false
 var looking_at = 1
@@ -38,6 +39,10 @@ func _ready():
 	jump_vel = 10.0
 	speed = 10.0
 
+func normalize_scale(delta):
+	animated_sprite.scale.x = move_toward(animated_sprite.scale.x, 1, 6  *  delta)
+	animated_sprite.scale.y = move_toward(animated_sprite.scale.y, 1, 3 * delta)
+
 func jump():
 	var remaining_time = timer.get_time_left()
 
@@ -45,7 +50,7 @@ func jump():
 		last_time_decrement = jump_cost
 		timer.update_time(jump_cost)
 		animated_sprite.scale = Vector2(0.6, 1.3)
-		splash_dust.play()
+		splash_dust.emit(5)
 		velocity.y = jump_vel * jump_mul
 		$Audio/Jump.pitch_scale = 1.0
 		$Audio/Jump.play()
@@ -55,7 +60,7 @@ func jump():
 		last_time_decrement = db_jump_cost
 		timer.update_time(db_jump_cost)
 		animated_sprite.scale = Vector2(0.6, 1.3)
-		splash_dust.play()
+		splash_dust.emit(3)
 		$Audio/Jump.pitch_scale = 1.3
 		$Audio/Jump.play()
 		velocity.y = jump_vel * jump_mul
@@ -95,7 +100,7 @@ func dash():
 		return
 	animated_sprite.scale = Vector2(1.5, 0.7)
 	dashed = true
-	splash_dust.play()
+	splash_dust.emit(5)
 	last_time_decrement = dash_cost
 	$Timer.update_time(dash_cost)
 	velocity.x += speed * speed_mul * looking_at
@@ -105,12 +110,10 @@ func dash():
 
 func landing():
 	animated_sprite.scale = Vector2(1.5, 0.7)
-	splash_dust.play()
+	splash_dust.emit(3)
 
 # Physics process
 func _physics_process(delta: float) -> void:
-	if not can_control:
-		return
 
 	# Add the gravity
 	if not is_on_floor():
@@ -128,6 +131,13 @@ func _physics_process(delta: float) -> void:
 		# rolling = false
 		dashed = 0
 
+#	RESTART HANDLING (TBR)
+	if not can_control:
+		if can_move:
+			move_and_slide()
+		normalize_scale(delta)
+		return
+
 	if direction: looking_at = direction
 
 	jump()
@@ -135,17 +145,18 @@ func _physics_process(delta: float) -> void:
 	direction = Input.get_axis("move_left", "move_right")
 
 	move()
-
 	dash()
 
-	move_and_slide()
+	if can_move:
+		move_and_slide()
 
+	normalize_scale(delta)
+
+#	 RESTART HANDLING (TO BE REWORKED)
 	restart()
-
 	if timer.is_terminated():
 		handle_danger()
-	animated_sprite.scale.x = move_toward(animated_sprite.scale.x, 1, 6  *  delta)
-	animated_sprite.scale.y = move_toward(animated_sprite.scale.y, 1, 3 * delta)
+
 
 func handle_danger():
 	can_control = false
@@ -155,12 +166,16 @@ func handle_danger():
 func reset_player():
 	death = true
 	TransitionFade.transition()
+	velocity.x += 200 * -looking_at
+	velocity.y = jump_vel * jump_mul
+
+	animated_sprite.flip_h = true if velocity.x > 0 else false
+	splash_dust.emit(50) 
 	await TransitionFade.on_transition_finished
-	can_control = true
-	velocity.x = 0
-	velocity.y = 0
-	death = false
+	velocity = Vector2(0.0, 0.0)
 	global_position = positionStart
+	can_control = true
+	death = false
 
 func restart():
 	if Input.is_action_just_pressed("restart_level"):

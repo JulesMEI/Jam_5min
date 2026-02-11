@@ -3,12 +3,15 @@
 [ext_resource type="Script" uid="uid://6oeheoki5ol8" path="res://Assets/Scripts/player_controller.gd" id="1_6cd4h"]
 [ext_resource type="Texture2D" uid="uid://dlux1uq474ry4" path="res://Assets/Sprites/Player/JumpPack_CharacterSpriteSheet.png" id="2_7dd06"]
 [ext_resource type="Script" uid="uid://bicq8a0bgaust" path="res://Assets/Scripts/player_animator.gd" id="2_38rej"]
-[ext_resource type="Script" path="res://Assets/Scripts/camera_player.gd" id="2_t1xgp"]
+[ext_resource type="Script" uid="uid://b6tlsl4bbvlsi" path="res://Assets/Scripts/camera_player.gd" id="2_t1xgp"]
 [ext_resource type="Texture2D" uid="uid://bswj0ph40voej" path="res://Assets/Sprites/Player/Dust.png" id="4_t1xgp"]
-[ext_resource type="Script" path="res://Assets/Scripts/dust_particles.gd" id="5_23lac"]
+[ext_resource type="Script" uid="uid://cg7f58hrxrgge" path="res://Assets/Scripts/dust_particle.gd" id="6_jp3cw"]
 [ext_resource type="PackedScene" uid="uid://bqcrayrdeopuv" path="res://Assets/Scenes/timer.tscn" id="7_c3tg1"]
 [ext_resource type="AudioStream" uid="uid://b8vqid66ed6sa" path="res://Sound/Effects/Jump.wav" id="8_jp3cw"]
 [ext_resource type="AudioStream" uid="uid://be2rpd05ftfh0" path="res://Sound/Effects/Dash.wav" id="9_ecf78"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ast1v"]
+radius = 11.0
 
 [sub_resource type="Animation" id="Animation_7dd06"]
 resource_name = "Dead"
@@ -70,8 +73,9 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_lerqx"]
 resource_name = "Hurt"
-length = 0.5000167
-step = 0.16666667
+length = 0.3333417
+loop_mode = 1
+step = 0.083333336
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -79,10 +83,10 @@ tracks/0/path = NodePath("AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.33333334),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [0, 1, 2]
+"values": [0, 1]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -317,10 +321,6 @@ region = Rect2(0, 128, 32, 32)
 atlas = ExtResource("2_7dd06")
 region = Rect2(32, 128, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tcr7l"]
-atlas = ExtResource("2_7dd06")
-region = Rect2(64, 128, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_yrbh7"]
 atlas = ExtResource("2_7dd06")
 region = Rect2(0, 0, 32, 32)
@@ -344,6 +344,10 @@ region = Rect2(0, 64, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_dsi02"]
 atlas = ExtResource("2_7dd06")
 region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcr7l"]
+atlas = ExtResource("2_7dd06")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eprmk"]
 atlas = ExtResource("2_7dd06")
@@ -433,13 +437,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8qq7w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tcr7l")
 }],
 "loop": false,
 "name": &"Hurt",
-"speed": 6.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -469,10 +470,13 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dsi02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcr7l")
 }],
-"loop": false,
+"loop": true,
 "name": &"Land",
-"speed": 6.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -534,46 +538,42 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="Curve" id="Curve_t1xgp"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.31378865, 0.73266226), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
+[sub_resource type="Curve" id="Curve_lerqx"]
+_data = [Vector2(0, 1), 0.0, 1.8488177, 0, 0, Vector2(1, 0.07941842), 0.0, 0.0, 0, 0]
+point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_23lac"]
-curve = SubResource("Curve_t1xgp")
+[sub_resource type="CurveTexture" id="CurveTexture_jp3cw"]
+curve = SubResource("Curve_lerqx")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w3t24"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ecf78"]
+lifetime_randomness = 0.3
 particle_flag_disable_z = true
-angle_min = 1.0728835e-05
-angle_max = 1.0728835e-05
 direction = Vector3(0, -1, 0)
-spread = 12.562
-initial_velocity_min = 50.0
-initial_velocity_max = 75.0
-angular_velocity_min = -100.000015
-angular_velocity_max = 99.999985
-gravity = Vector3(0, 100, 0)
-scale_curve = SubResource("CurveTexture_23lac")
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ast1v"]
-radius = 11.0
+initial_velocity_min = 41.489998
+initial_velocity_max = 41.489998
+gravity = Vector3(0, 98, 0)
+scale_curve = SubResource("CurveTexture_jp3cw")
 
 [node name="Player" type="CharacterBody2D" unique_id=514449182 node_paths=PackedStringArray("timer", "animated_sprite", "splash_dust")]
 script = ExtResource("1_6cd4h")
 timer = NodePath("Timer")
 animated_sprite = NodePath("Graphical/AnimatedSprite2D")
-splash_dust = NodePath("Graphical/SkidDust")
+splash_dust = NodePath("Graphical/Dust")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1090173009]
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("2_t1xgp")
 
-[node name="Graphical" type="Node2D" parent="." unique_id=759932560 node_paths=PackedStringArray("controller", "animated_sprite", "landing_dust", "skid_dust")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=560764622]
+position = Vector2(0, -14)
+shape = SubResource("CapsuleShape2D_ast1v")
+
+[node name="Graphical" type="Node2D" parent="." unique_id=759932560 node_paths=PackedStringArray("controller", "animated_sprite", "dust")]
 script = ExtResource("2_38rej")
 controller = NodePath("..")
 animated_sprite = NodePath("AnimatedSprite2D")
-landing_dust = NodePath("LandingDust")
-skid_dust = NodePath("SkidDust")
+dust = NodePath("Dust")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Graphical" unique_id=542683099]
 libraries/ = SubResource("AnimationLibrary_c3tg1")
@@ -585,41 +585,14 @@ animation = &"Idle"
 autoplay = "Idle"
 speed_scale = 0.575
 
-[node name="SkidDust" type="GPUParticles2D" parent="Graphical" unique_id=2026024161 node_paths=PackedStringArray("timer")]
+[node name="Dust" type="GPUParticles2D" parent="Graphical" unique_id=1953996342]
 emitting = false
-amount = 1
+amount = 10
 texture = ExtResource("4_t1xgp")
 lifetime = 0.4
-one_shot = true
-explosiveness = 0.9
-process_material = SubResource("ParticleProcessMaterial_w3t24")
-script = ExtResource("5_23lac")
-timer = NodePath("../Timers/SkidDustTimer")
-
-[node name="LandingDust" type="GPUParticles2D" parent="Graphical" unique_id=62103279 node_paths=PackedStringArray("timer")]
-emitting = false
-amount = 4
-texture = ExtResource("4_t1xgp")
-lifetime = 0.4
-one_shot = true
-explosiveness = 0.9
-process_material = SubResource("ParticleProcessMaterial_w3t24")
-script = ExtResource("5_23lac")
-timer = NodePath("../Timers/LandingDustTimer")
-
-[node name="Timers" type="Node" parent="Graphical" unique_id=143400298]
-
-[node name="SkidDustTimer" type="Timer" parent="Graphical/Timers" unique_id=1551067617]
-wait_time = 0.05
-one_shot = true
-
-[node name="LandingDustTimer" type="Timer" parent="Graphical/Timers" unique_id=390410431]
-wait_time = 0.05
-one_shot = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=560764622]
-position = Vector2(0, -14)
-shape = SubResource("CapsuleShape2D_ast1v")
+explosiveness = 0.15
+process_material = SubResource("ParticleProcessMaterial_ecf78")
+script = ExtResource("6_jp3cw")
 
 [node name="Audio" type="Node2D" parent="." unique_id=2064320120]
 

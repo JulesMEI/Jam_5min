@@ -2,9 +2,8 @@ extends Node2D
 
 @export var controller : PlayerController
 @export var animated_sprite : AnimatedSprite2D
-@export var landing_dust : Dust
-@export var skid_dust : Dust
-#@export var timer : Timer
+
+@export var dust : Dust
 
 func _process(_delta):
 	if controller.direction == 1:
@@ -13,7 +12,7 @@ func _process(_delta):
 		animated_sprite.flip_h = true
 
 	if controller.death:
-		animated_sprite.play("Dead")
+		animated_sprite.play("Hurt")
 		return
 
 	if not controller.can_control:
@@ -38,7 +37,7 @@ func _process(_delta):
 			if (!controller.direction) :
 				animated_sprite.play("Skid")
 				if abs(controller.velocity.x) > 10 :
-					skid_dust.play()
+					dust.emit()
 				return
 
 			animated_sprite.play("Run")

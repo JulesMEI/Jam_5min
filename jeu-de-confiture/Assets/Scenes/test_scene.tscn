@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cmf0jq3i4bhxg"]
 
-[ext_resource type="Script" path="res://Assets/Scripts/level_2.gd" id="1_637wq"]
 [ext_resource type="PackedScene" uid="uid://dqdltsrfeteu7" path="res://Assets/Scenes/player.tscn" id="2_2evn1"]
 [ext_resource type="PackedScene" uid="uid://bog5v7lcc0o3c" path="res://Assets/Scenes/win_condition.tscn" id="4_k5bmm"]
+[ext_resource type="PackedScene" uid="uid://bf3e7idq1qf7x" path="res://Assets/Scenes/death_arena.tscn" id="5_83663"]
 [ext_resource type="PackedScene" uid="uid://cu51dy8duh3xn" path="res://Assets/Scenes/hud.tscn" id="5_hvq5l"]
 [ext_resource type="Texture2D" uid="uid://dsdq2bvjijsk5" path="res://icon.svg" id="5_mvfnm"]
 
@@ -10,7 +10,6 @@
 distance = -4.0
 
 [node name="TestScene" type="Node2D" unique_id=1727485768]
-script = ExtResource("1_637wq")
 
 [node name="Player" parent="." unique_id=514449182 instance=ExtResource("2_2evn1")]
 position = Vector2(0, -1)
@@ -30,3 +29,13 @@ shape = SubResource("WorldBoundaryShape2D_1trni")
 position = Vector2(3, 67)
 scale = Vector2(91.32001, 1)
 texture = ExtResource("5_mvfnm")
+
+[node name="Icon" type="Sprite2D" parent="Icon" unique_id=2062354267]
+modulate = Color(1, 0.21176471, 0.41568628, 1)
+position = Vector2(0.19710907, -169.42)
+scale = Vector2(0.061810326, 0.45968747)
+texture = ExtResource("5_mvfnm")
+
+[node name="death" parent="." unique_id=154333834 instance=ExtResource("5_83663")]
+position = Vector2(17.999756, -104.99951)
+scale = Vector2(0.9257024, 0.90763736)
