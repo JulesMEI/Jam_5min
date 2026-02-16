@@ -24,13 +24,13 @@ func _physics_process(delta: float) -> void:
 		shake_intensify = max(shake_intensify - shake_decay * delta, 0)
 	else:
 		offset = lerp(offset, Vector2.ZERO, 10.5 * delta)
-	
+
 
 func screen_shake(intensity : int, time : float):
 	randomize()
 	noise.seed = randi()
 	noise.frequency = 2.0
-	
+
 	shake_intensify = intensity
 	active_shake_time = time
 	shake_time = 2.0

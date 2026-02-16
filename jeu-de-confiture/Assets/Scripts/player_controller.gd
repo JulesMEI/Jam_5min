@@ -168,7 +168,7 @@ func reset_player():
 	velocity.y = jump_vel * jump_mul
 
 	animated_sprite.flip_h = true if velocity.x > 0 else false
-	splash_dust.emit(50) 
+	splash_dust.emit(50)
 	await TransitionFade.on_transition_finished
 	velocity = Vector2(0.0, 0.0)
 	global_position = positionStart

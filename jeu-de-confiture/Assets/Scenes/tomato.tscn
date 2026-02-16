@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c0bij0ypwmqi1"]
 
 [ext_resource type="Texture2D" uid="uid://ctum0m3lap0gt" path="res://Assets/Sprites/tomato.png" id="1_ajaoc"]
-[ext_resource type="Script" uid="uid://84e524kvhuwp" path="res://tomato.gd" id="1_bka0x"]
+[ext_resource type="Script" uid="uid://84e524kvhuwp" path="res://Assets/Scripts/tomato.gd" id="1_bka0x"]
 [ext_resource type="Texture2D" uid="uid://5g7efosbv25c" path="res://Assets/Sprites/hand.png" id="2_joa5w"]
 [ext_resource type="AudioStream" uid="uid://dqbjc6t1tc51t" path="res://Sound/Effects/tomato-splat.mp3" id="4_kg4fp"]
 
